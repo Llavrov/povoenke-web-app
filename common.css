@@ -77,6 +77,8 @@ p, h1, h2, h3 {
     gap: 8px;
     align-items: center;
 
+    width: 100%;
+    max-width: 190px;
     background: white;
     padding: 12px 20px;
     border-radius: 16px;
@@ -90,6 +92,37 @@ p, h1, h2, h3 {
 .button__primary:active {
 
 }
+
+.button__secondary {
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    width: 100%;
+    max-width: 190px;
+    background: rgba(55, 110, 164, 0.06);
+    padding: 12px 20px;
+    border-radius: 16px;
+
+    font-family: TTCommonsRegular, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+
+/*  RC filters - шапка с фильтрами объекта недвижимости  */
+
+
+.rc-filters {
+    width: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 /*  Fonts  */
 
