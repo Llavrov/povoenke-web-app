@@ -12,13 +12,14 @@
     max-width: 1131px;
 }
 
-/*  Контейнер картоек ЖК  */
+
+/*  Контейнер карточек ЖК  */
 
 
 .rc-cards-container {
     display: flex;
     flex-direction: column;
-    padding-top: 45px;
+    padding: 45px 0;
     gap: 45px;
 }
 
@@ -26,6 +27,11 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.rc-cards-container__filters__show-on-map,
+.rc-cards-container__filters__price {
+    width: 190px;
 }
 
 .rc-cards-container__content {
