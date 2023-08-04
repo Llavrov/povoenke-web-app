@@ -242,6 +242,10 @@ p, h1, h2, h3 {
     gap: 12px;
 }
 
+.rc-filters__content__filters__additional {
+    flex-wrap: wrap;
+}
+
 .rc-filters__content__filters__tab {
     display: flex;
     flex-direction: column;
@@ -278,6 +282,63 @@ p, h1, h2, h3 {
 .rc-filters__content__filters-additional {
     display: flex;
     justify-content: space-between;
+}
+
+.rc-filters__content__filters__additional .rc-filters__date,
+.rc-filters__content__filters__additional .rc-filters__place {
+    display: none;
+}
+
+@media (max-width: 981px) {
+    .rc-filters__content__filters__main .rc-filters__date {
+        display: none;
+    }
+
+    .rc-filters__content__filters__additional .rc-filters__date {
+        display: flex;
+    }
+}
+
+@media (max-width: 820px) {
+    .rc-filters__content__filters__main .rc-filters__place {
+        display: none;
+    }
+
+    .rc-filters__content__filters__additional .rc-filters__place {
+        display: flex;
+    }
+}
+
+@media (max-width: 660px) {
+    .rc-filters__content__filters {
+        align-items: center;
+        justify-content: start;
+        height: 350px;
+    }
+
+    .rc-filters__content__filters__main,
+    .rc-filters__content__filters__additional {
+        max-width: 300px;
+        flex-direction: column;
+    }
+
+    .rc-filters__content__filters__main .rc-filters__place {
+        display: flex;
+    }
+
+    .rc-filters__content__filters__additional .rc-filters__place {
+        display: none;
+    }
+
+    .rc-filters__city,
+    .rc-filters__builder,
+    .rc-filters__banks,
+    .rc-filters__price,
+    .rc-filters__finishing,
+    .rc-filters__place,
+    .rc-filters__date {
+        max-width: 300px;
+    }
 }
 
 
