@@ -12,6 +12,13 @@
     max-width: 1131px;
 }
 
+@media (max-width: 1131px) {
+    .content-border {
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+}
+
 
 /*  Промо ЖК "Покупайте у застройщика"  */
 
@@ -51,13 +58,45 @@
     position: absolute;
     z-index: 2;
     top: 74px;
-    right: 205px;
+    right: 235px;
+}
+
+.rc-promo__images__pig img {
+    height: 180px;
+    width: 319px;
+    object-fit: contain;
 }
 
 .rc-promo__images__safe {
     position: absolute;
     z-index: 1;
 }
+
+.rc-promo__images__safe img {
+    height: 249px;
+    width: 445px;
+    object-fit: contain;
+}
+
+@media (max-width: 1131px) {
+    .rc-promo {
+        height: 492px;
+    }
+
+    .rc-promo__content {
+        flex-direction: column-reverse;
+        height: 492px;
+    }
+
+    .rc-promo__title {
+        width: 343px;
+    }
+
+    .rc-promo__images {
+        margin: 40px -70px 0 0;
+    }
+}
+
 
 /*  Контейнер карточек ЖК  */
 

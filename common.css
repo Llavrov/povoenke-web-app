@@ -32,8 +32,8 @@ p, h1, h2, h3 {
 .title__large {
     font-family: TTCommonsDemiBold, sans-serif;
     font-size: 44px;
-    font-weight: 600;
     line-height: 44px;
+    font-weight: 600;
 }
 
 .title__medium {
@@ -76,6 +76,13 @@ p, h1, h2, h3 {
 
 .no-whitespace {
     white-space: nowrap;
+}
+
+@media (max-width: 1131px) {
+    .title__large {
+        font-size: 34px;
+        line-height: 34px;
+    }
 }
 
 
