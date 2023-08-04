@@ -1,3 +1,8 @@
+const WINDOW_WIDTH = document.body.clientWidth;
+const WINDOW_HEIGHT = document.body.clientHeight;
+
+const TOUCH_SCREEN = 660;
+
 const container = document.querySelector('.rc-cards-container__content');
 
 function createNewCard(cardId) {
@@ -170,7 +175,7 @@ for (let cardId = 0; cardId < COUNT_OF_CARDS; cardId++) {
 
 const swiperContainer = document.querySelectorAll('.swiper');
 
-if (swiperContainer.length) {
+if (swiperContainer.length && WINDOW_WIDTH > TOUCH_SCREEN) {
     swiperContainer.forEach((container) => {
         // Берем wrapper
         const swiperWrapper = container.querySelector('.swiper-wrapper');
@@ -212,10 +217,12 @@ listOfCards.forEach((card) => {
     const images = card.querySelectorAll('.rc-card__image__rc');
 
     content.addEventListener('mouseover', () => {
-        swiper.style.height = '200px';
-        images.forEach((image) => {
-            image.style.height = '200px';
-        })
+        if (WINDOW_WIDTH > TOUCH_SCREEN) {
+            swiper.style.height = '200px';
+            images.forEach((image) => {
+                image.style.height = '200px';
+            });
+        }
     });
 
     content.addEventListener('mouseout', () => {
