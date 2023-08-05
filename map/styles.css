@@ -1,0 +1,20 @@
+.map-content {
+    width: 100%;
+    height: 640px;
+    background: #F2F2F2;
+}
+
+.map-content__border {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.map-content__selected__rc-card {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="../common.css">
+        <link rel="stylesheet" type="text/css" href="../list/styles.css">
+        <link rel="stylesheet" type="text/css" href="./styles.css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+        <title>New Buildings</title>
+    </head>
+    <body>
+        <div class="new-buildings-container">
+            <div class="building-slider-container">
+                <div class="content-border building-slider__content">
+                    <div class="building-slider__wrapper">
+                        <div class="building-slider">
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide">
+                                    <div class="new-buildings__image__rc">
+                                        <img src="../assets/rc.png" alt="residential complex description">
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="new-buildings__image__rc">
+                                        <img src="../assets/rc-2.png" alt="residential complex description">
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="new-buildings__image__rc">
+                                        <img src="../assets/rc.png" alt="residential complex description">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- If we need navigation buttons -->
+                            <div class="building-slider__button-prev">
+                                <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L6 6L1 11" stroke="#112233" stroke-opacity="0.35" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="building-slider__button-next">
+                                <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 1L2 6L7 11" stroke="#112233" stroke-opacity="0.35" stroke-width="2"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="building-slider-pagination"></div>
+                    </div>
+
+                    <div class="min-map"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--  rc-cards: Добавление карточек, слайдера фотографий  -->
+        <script type="module" src="./building-slider.js"></script>
+
+        <!--  rc-filters: Открыть все фильтры  -->
+        <script type="module" src="../scripts/filters.js"></script>
+
+        <!--  Swiper slider  -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+        <!--  rc-cards: Добавление карточек, слайдера фотографий  -->
+        <script type="module" src="../scripts/connect-card.js"></script>
+    </body>
+</html>

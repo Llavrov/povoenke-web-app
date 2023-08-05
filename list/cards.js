@@ -13,7 +13,7 @@ function createNewCard(cardId) {
             <div class="rc-card__image__logo">
                 <img
                     class="rc-logo"
-                    src="./logo.png"
+                    src="../assets/logo.png"
                     alt="residential complex description"
                 >
             </div>
@@ -24,17 +24,17 @@ function createNewCard(cardId) {
                     <!-- Slides -->
                     <div class="swiper-slide">
                         <div class="rc-card__image__rc">
-                            <img src="./rc.png" alt="residential complex description">
+                            <img src="../assets/rc.png" alt="residential complex description">
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="rc-card__image__rc">
-                            <img src="./rc-2.png" alt="residential complex description">
+                            <img src="../assets/rc-2.png" alt="residential complex description">
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="rc-card__image__rc">
-                            <img src="./rc.png" alt="residential complex description">
+                            <img src="../assets/rc.png" alt="residential complex description">
                         </div>
                     </div>
                 </div>
@@ -173,6 +173,7 @@ for (let cardId = 0; cardId < COUNT_OF_CARDS; cardId++) {
     createNewCard(`swiper-${cardId}`);
 }
 
+// Добавляем смену изображений при наведении на Swiper
 const swiperContainer = document.querySelectorAll('.swiper');
 
 if (swiperContainer.length && WINDOW_WIDTH > TOUCH_SCREEN) {
