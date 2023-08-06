@@ -127,6 +127,13 @@
     gap: 24px;
 }
 
+.rc-cards-min-container__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 24px;
+}
+
 @media (max-width: 660px) {
     .rc-cards-container__filters {
         display: none;
@@ -145,6 +152,21 @@
     width: 100%;
     max-width: 361px;
     height: 517px;
+    border-radius: 20px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.rc-card-min {
+    width: 100%;
+    min-width: 361px;
+    max-width: 361px;
+    height: 400px;
     border-radius: 20px;
     background: white;
     display: flex;
