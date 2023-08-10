@@ -1,7 +1,9 @@
+// Инициализируем Swiper слайдер
+
 new Swiper(`.building-slider`, {
     // Optional parameters
     direction: 'horizontal',
-    loop: true,
+    loop: false,
 
     // Navigation arrows
     navigation: {
@@ -15,36 +17,61 @@ new Swiper(`.building-slider`, {
     }
 });
 
+const MAX_COUNT_OF_SLIDES = 7;
+const MAX_LAST_INDEX_OF_SLIDES = 6;
+const BUILDING_IMAGE_RC_MINI_CLASS = '.new-buildings__image__rc__mini';
+const BUILDING_IMAGE_RC_MINI_ACTIVE_CLASS = 'new-buildings__image__rc__mini__active';
+
 // Добавляем минислайдер таббар, для интерактивной галлереи картинок
 
-const MAX_COUNT_OF_SLIDES = 7;
+const buildingSwiper = document.querySelector('.building-slider');
+const buildingWrapper = buildingSwiper && buildingSwiper.querySelector('.swiper-wrapper');
 const swiper = document.querySelector('.building-slider').swiper;
 const miniSwiper = document.querySelector('.building-slider__mini-version');
-const wrapperSlides = miniSwiper.querySelector('.swiper-wrapper');
-const allSlides = wrapperSlides.querySelectorAll('.swiper-slide__mini');
+const miniWrapper = miniSwiper && miniSwiper.querySelector('.swiper-wrapper');
+const miniWrapperSlides = miniWrapper && miniWrapper.querySelectorAll('.swiper-slide__mini');
 
-swiper.on('activeIndexChange', function () {
-    console.log(swiper?.activeIndex);
-    if (swiper.activeIndex < MAX_COUNT_OF_SLIDES) {
-        allSlides.forEach((slide) => {
+swiper && swiper.on('activeIndexChange', function () {
+    if (miniWrapperSlides && swiper.activeIndex < MAX_COUNT_OF_SLIDES) {
+        miniWrapperSlides.forEach((slide) => {
             slide
-                .querySelector('.new-buildings__image__rc__mini')
-                .classList.remove('new-buildings__image__rc__mini__active');
+                .querySelector(BUILDING_IMAGE_RC_MINI_CLASS)
+                .classList.remove(BUILDING_IMAGE_RC_MINI_ACTIVE_CLASS);
         });
 
-        allSlides[swiper.activeIndex]
-            .querySelector('.new-buildings__image__rc__mini')
-            .classList.add('new-buildings__image__rc__mini__active');
+        miniWrapperSlides[swiper.activeIndex]
+            .querySelector(BUILDING_IMAGE_RC_MINI_CLASS)
+            .classList.add(BUILDING_IMAGE_RC_MINI_ACTIVE_CLASS);
     }
 });
 
-allSlides.forEach((slide, index) => {
+miniWrapperSlides && miniWrapperSlides.forEach((slide, index) => {
     slide.addEventListener('click', () => {
         swiper.slideTo(index);
     });
 })
 
-if (allSlides.length > MAX_COUNT_OF_SLIDES) {
-    allSlides.length = MAX_COUNT_OF_SLIDES;
+// На MAX_COUNT_OF_SLIDES слайде мини слайдбара показываем оставшееся количество изображений
 
+const counter = document.createElement('div');
+const slideWithCounter = miniWrapperSlides && miniWrapperSlides[MAX_LAST_INDEX_OF_SLIDES];
+
+if (miniWrapperSlides && miniWrapperSlides.length > MAX_LAST_INDEX_OF_SLIDES) {
+
+    counter.className = 'building-slider__count-of-images-count';
+    counter.innerHTML = `
+        <p class="title__light title__gray">
+            + ${miniWrapperSlides.length - MAX_COUNT_OF_SLIDES}
+        </p>
+    `;
+
+    slideWithCounter.appendChild(counter);
+    slideWithCounter.addEventListener('click', () => {
+
+    });
 }
+
+miniWrapperSlides && miniWrapperSlides.forEach((slide, index) => {
+    if (index > MAX_LAST_INDEX_OF_SLIDES)
+        miniWrapper.removeChild(slide);
+});
