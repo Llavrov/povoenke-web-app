@@ -841,7 +841,7 @@ td:not(:first-child, :last-child) {
     padding: 0 calc((100% - 1131px) / 2);
 }
 
-@media screen {
+@media (max-width: 780px) {
     .building-nearest-complex-container {
         height: 514px;
     }
