@@ -731,6 +731,188 @@ td:not(:first-child, :last-child) {
     padding: 0 calc((100% - 1131px) / 2);
 }
 
+
+/*  Карточка Похожих квартир */
+
+
+.swiper {
+    width: 300px;
+    max-height: 240px;
+}
+
+.swiper-slide {
+    max-height: 240px;
+}
+
+.rc-apartment-min {
+    min-width: 340px;
+    max-width: 340px;
+    height: 434px;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.rc-apartment__image {
+    position: relative;
+}
+
+.rc-apartment__image__logo {
+    position: absolute;
+    z-index: 11;
+    top: 13px;
+    left: 13px;
+
+    width: 42px;
+    height: 42px;
+    border: 5px solid rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.rc-logo {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(42, 84, 126, 0.16);
+    box-sizing: border-box;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.rc-apartment__image__rc {
+    overflow: hidden;
+    width: 100%;
+    max-width: 240px;
+    height: 240px;
+    object-fit: cover;
+    transition: 0.5s height;
+}
+
+.rc-apartment__image__rc img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.rc-apartment__content:hover .rc-apartment__image__rc {
+    height: 200px;
+}
+
+.rc-apartment__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+    padding: 8px 0 8px 20px;
+    box-sizing: border-box;
+}
+
+.rc-apartment__content__title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rc-apartment__content__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 60%;
+    margin-top: 4px;
+}
+
+.rc-apartment__content__list__mobile {
+    display: none;
+}
+
+.rc-apartment__content__list__row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rc-apartment__content__list__row p,
+.rc-apartment__content__list__row a {
+    display: flex;
+    flex: 1 33%;
+}
+
+.rc-apartment__content__metro {
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rc-apartment__content__metro__item {
+    display: flex;
+    flex-direction: column;
+}
+
+.apartment-info__metro__icons__item {
+    display: flex;
+    gap: 10px;
+}
+
+.apartment-info__metro__icon-metro,
+.apartment-info__metro__on-foot {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.swiper__hover-section__container {
+    position: absolute;
+    display: flex;
+    top: 0;
+
+    z-index: 10;
+}
+
+.rc-apartment__content__metro__mobile {
+    display: none;
+}
+
+.metro-icon__green svg path {
+    fill: rgba(0, 155, 71, 1);
+}
+
+.rc-apartment__content__buttons {
+    margin-top: 5px;
+}
+
+.rc-apartment__content__metro__mobile {
+    display: block;
+}
+
+.rc-apartment__content__list__mobile {
+    display: flex;
+}
+
+.rc-apartment__content__list,
+.rc-apartment__content__metro,
+.rc-apartment__content__labels,
+.rc-apartment__content__title:nth-child(2) {
+    display: none;
+}
+
+.rc-apartment__content {
+    margin-top: 20px;
+    padding: 0;
+    gap: 4px;
+}
+
+.rc-apartment__image__rc {
+    max-width: 100%;
+}
+
 @media (max-width: 780px) {
     .apartment-nearest-complex-container {
         height: 514px;

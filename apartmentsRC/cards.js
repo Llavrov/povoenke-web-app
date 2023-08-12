@@ -2,17 +2,18 @@ const SWIPER_HOVER_CONTAINER_CLASS = 'swiper__hover-section__container';
 const SWIPER_CLASS = '.swiper';
 const SWIPER_WRAPPER_CLASS = '.swiper-wrapper';
 const SWIPER_SLIDE_CLASS = '.swiper-slide';
-const RC_CARDS_MIN_CLASS = 'rc-apartment-min';
-const RC_CARDS_MIN_CONTENT_CLASS = '.rc-cards-min-container__content';
+const RC_CARD_CLASS = '.rc-apartment';
+const RC_CARD_CONTENT_CLASS = '.rc-apartment__content';
+const RC_IMAGE_CLASS = '.rc-apartment__image__rc';
 
 const WINDOW_WIDTH = document.body.clientWidth;
 const TOUCH_SCREEN = 660;
 
-const container = document.querySelector(RC_CARDS_MIN_CONTENT_CLASS);
+const container = document.querySelector('.rc-apartments-container__content');
 
 function createNewCard(cardId) {
     const card = document.createElement('div');
-    card.className = RC_CARDS_MIN_CLASS;
+    card.className = 'rc-apartment';
     card.innerHTML = `
         <div class="rc-apartment__image">
             <!-- Slider main container  -->
