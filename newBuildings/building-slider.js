@@ -51,6 +51,29 @@ miniWrapperSlides && miniWrapperSlides.forEach((slide, index) => {
     });
 })
 
+// Модальное окно building-slider-container__modal__container
+
+const MODAL_CONTAINER = '.building-slider-container__modal__container';
+const MODAL_CLOSE = '.building-slider-container__modal__close';
+const modalContainer = document.querySelector(MODAL_CONTAINER);
+const modalCloseButton = document.querySelector(MODAL_CLOSE);
+
+let isModalOpen = false;
+
+function handleOpenModalScreen() {
+    isModalOpen = !isModalOpen;
+
+    if (isModalOpen) {
+        modalContainer.style.display = 'none';
+    } else {
+        modalContainer.style.display = 'block';
+    }
+}
+
+modalCloseButton.addEventListener('click', () => {
+    handleOpenModalScreen();
+})
+
 // На MAX_COUNT_OF_SLIDES слайде мини слайдбара показываем оставшееся количество изображений
 
 const counter = document.createElement('div');
@@ -67,7 +90,7 @@ if (miniWrapperSlides && miniWrapperSlides.length > MAX_LAST_INDEX_OF_SLIDES) {
 
     slideWithCounter.appendChild(counter);
     slideWithCounter.addEventListener('click', () => {
-
+        handleOpenModalScreen();
     });
 }
 
@@ -75,3 +98,5 @@ miniWrapperSlides && miniWrapperSlides.forEach((slide, index) => {
     if (index > MAX_LAST_INDEX_OF_SLIDES)
         miniWrapper.removeChild(slide);
 });
+
+
