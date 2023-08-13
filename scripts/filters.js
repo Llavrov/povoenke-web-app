@@ -6,35 +6,35 @@ const iconAllFilters = document.querySelector('.rc-filters__button__all-filters_
 
 const FILTER_OPTIONS = [
     {
-        selector: '.rc-filters__builder',
+        selector: '.rc-filters__content__filters__tab .rc-filters__builder',
         options: ['опция 1', 'опция 2', 'опция 3'],
     },
     {
-        selector: '.rc-filters__corpus',
+        selector: '.rc-filters__content__filters__tab .rc-filters__corpus',
         options: ['опция 1', 'опция 2', 'опция 3'],
     },
     {
-        selector: '.rc-filters__finishing',
+        selector: '.rc-filters__content__filters__tab .rc-filters__finishing',
         options: ['опция 1', 'опция 2', 'опция 3'],
     },
     {
-        selector: '.rc-filters__banks',
+        selector: '.rc-filters__content__filters__tab .rc-filters__banks',
         options: ['опция 1', 'опция 2', 'опция 3'],
     },
     {
-        selector: '.rc-filters__city',
+        selector: '.rc-filters__content__filters__tab .rc-filters__city',
         options: ['опция 1', 'опция 2', 'опция 3'],
     },
     {
-        selector: '.rc-filters__price',
+        selector: '.rc-filters__content__filters__tab .rc-filters__price',
         options: ['опция 1', 'опция 2', 'опция 3'],
     },
     {
-        selector: '.rc-filters__place',
+        selector: '.rc-filters__content__filters__tab .rc-filters__place',
         options: ['опция 1', 'опция 2', 'опция 3'],
     },
     {
-        selector: '.rc-filters__date',
+        selector: '.rc-filters__content__filters__tab .rc-filters__date',
         options: ['опция 1', 'опция 2', 'опция 3'],
     }
 ];
@@ -57,7 +57,6 @@ function handleCloseAllMenus(event) {
         if (filterTabElement && !parentsNodesContainClass(event.target, selector)) {
             const menu = filterTabElement.querySelector('.rc-filters__menu');
             menu && filterTabElement.removeChild(menu);
-        } else {
         }
     });
 }
@@ -88,21 +87,22 @@ function handleSwitchShowAllFilters() {
 window.addEventListener('resize', () => {
     handleSwitchShowAllFilters();
     setTimeout(() => handleSwitchShowAllFilters(), 0);
-    setTimeout(() => handleSetMenusForAllFiltersTabs(), 0);
-})
+});
 
 let showAllFilters = false;
 
 buttonAllFilters && buttonAllFilters.addEventListener('click', () => {
     showAllFilters = !showAllFilters;
+
     handleSwitchShowAllFilters();
     setTimeout(() => handleSwitchShowAllFilters(), 0);
-    setTimeout(() => handleSetMenusForAllFiltersTabs(), 0);
 });
 
 // При нажатии на таб бар открывается выпадающее меню
 
-function handleOpenMenuFilter(event, filterTabElement, menu, title) {
+function handleOpenMenuFilter(event, selector, menu, title) {
+    const filterTabElement = document.querySelector(selector);
+
     const isVisible = filterTabElement.querySelector('.rc-filters__menu');
     const isOption = event.target.classList.contains('rc-filters__option');
 
@@ -124,6 +124,8 @@ function handleOpenMenuFilter(event, filterTabElement, menu, title) {
 function handleSetMenusForAllFiltersTabs() {
     FILTER_OPTIONS.map(({selector, options}) => {
         const filterTabElement = document.querySelector(selector);
+        const filterTabElements = document.querySelectorAll(selector);
+
         const title =
             filterTabElement && filterTabElement
                 .querySelector('.horizontal')
@@ -140,9 +142,26 @@ function handleSetMenusForAllFiltersTabs() {
             menu.appendChild(optionElement);
         });
 
-        filterTabElement && filterTabElement.addEventListener('click', (event) =>
-            handleOpenMenuFilter(event, filterTabElement, menu, title)
-        );
+        if (filterTabElements.length > 1) {
+            const filterTabElementAdd = additionalFiltersContainer.querySelector(selector);
+
+            filterTabElementAdd.addEventListener('click', (event) =>
+                handleOpenMenuFilter(
+                    event,
+                    `.rc-filters__content__filters__additional ${selector}`,
+                    menu,
+                    title
+                )
+            );
+
+            filterTabElement.addEventListener('click', (event) =>
+                handleOpenMenuFilter(event, selector, menu, title)
+            );
+        } else {
+            filterTabElement && filterTabElement.addEventListener('click', (event) =>
+                handleOpenMenuFilter(event, selector, menu, title)
+            );
+        }
     });
 }
 
@@ -153,3 +172,5 @@ window.addEventListener('click', (event) => {
 });
 
 handleSetMenusForAllFiltersTabs();
+
+// При ресайзинге часть меню перемещаются в дополнительные меню

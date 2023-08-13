@@ -567,7 +567,7 @@
 }
 
 .building-mortgage__table {
-    margin-left: -20px;
+    margin: 0 -20px;
     position: relative;
     max-height: 400px;
     overflow: hidden;
@@ -613,6 +613,11 @@ td:not(:first-child, :last-child) {
     padding: 20px 16px;
 }
 
+.mobile-header__container {
+    width: 100%;
+    justify-content: space-between;
+}
+
 .mobile-header{
     display: none;
 }
@@ -622,13 +627,18 @@ td:not(:first-child, :last-child) {
 }
 
 @media (max-width: 780px) {
+    .building-mortgage__table__body tr {
+        padding: 20px 16px;
+        box-sizing: border-box;
+    }
+
     .building-mortgage-container {
         margin: 0 0 28px;
     }
 
     td, th,
     .building-mortgage__table__body td {
-        padding: 10px 16px;
+        padding: 10px 0;
     }
 
     .building-mortgage__table::after,
