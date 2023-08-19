@@ -658,8 +658,10 @@
 
 .building-mortgage__tab-bar__item__active {
     color: rgba(0, 155, 71, 1);
+    text-decoration-line: underline;
+    text-decoration-color: rgba(0, 155, 71, 1);
+    text-decoration-style: solid;
     text-underline-offset: 0.5em;
-    text-decoration: underline rgba(0, 155, 71, 1) solid;
 }
 
 .building-mortgage__table {
@@ -836,8 +838,10 @@ td:not(:first-child, :last-child) {
 
 .building-description__tab-bar__item__active {
     color: rgba(0, 155, 71, 1);
+    text-decoration-line: underline;
+    text-decoration-color: rgba(0, 155, 71, 1);
+    text-decoration-style: solid;
     text-underline-offset: 0.5em;
-    text-decoration: underline rgba(0, 155, 71, 1) solid;
 }
 
 @media (max-width: 780px) {

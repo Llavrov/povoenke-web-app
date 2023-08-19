@@ -575,6 +575,10 @@ td:not(:first-child, :last-child) {
 }
 
 @media (max-width: 780px) {
+    .apartment-mortgage__table__body__bottom {
+        display: none;
+    }
+
     .apartment-mortgage__table__body tr {
         padding: 20px 16px;
         box-sizing: border-box;
@@ -587,6 +591,10 @@ td:not(:first-child, :last-child) {
     td, th,
     .apartment-mortgage__table__body td {
         padding: 10px 0;
+    }
+
+    .apartment-mortgage__table {
+        max-height: 450px;
     }
 
     .apartment-mortgage__table::after,

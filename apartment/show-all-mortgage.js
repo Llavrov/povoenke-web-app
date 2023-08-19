@@ -138,6 +138,11 @@ function createMortgageRow(mortgageData) {
 
 // Добавляем карточки таблицы ипотеки
 
+mortgageData.map((mortgage) => {
+    const row = createMortgageRow(Object.values(mortgage));
+    mortgageBodyContainer.appendChild(row);
+})
+
 function parentsNodesContainClass(node, className) {
     if (node?.parentNode?.classList?.contains(className))
         return true;
@@ -148,11 +153,6 @@ function parentsNodesContainClass(node, className) {
         return false;
     }
 }
-
-mortgageData.map((mortgage) => {
-    const row = createMortgageRow(Object.values(mortgage));
-    mortgageBodyContainer.appendChild(row);
-})
 
 // Модалка для "i" заголовков
 
