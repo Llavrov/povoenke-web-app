@@ -17,6 +17,8 @@ new Swiper(`.building-slider`, {
     }
 });
 
+const WINDOW_WIDTH = document.body.clientWidth;
+const TOUCH_SCREEN = 660;
 const MAX_COUNT_OF_SLIDES = 7;
 const MAX_LAST_INDEX_OF_SLIDES = 6;
 const BUILDING_IMAGE_RC_MINI_CLASS = '.new-buildings__image__rc__mini';
@@ -92,6 +94,12 @@ if (miniWrapperSlides && miniWrapperSlides.length > MAX_LAST_INDEX_OF_SLIDES) {
     slideWithCounter.addEventListener('click', () => {
         handleOpenModalScreen();
     });
+
+    if (WINDOW_WIDTH < TOUCH_SCREEN) {
+        document.querySelector('.building-slider-container').addEventListener('click', (event) => {
+            handleOpenModalScreen();
+        });
+    }
 }
 
 miniWrapperSlides && miniWrapperSlides.forEach((slide, index) => {

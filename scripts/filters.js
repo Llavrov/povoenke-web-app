@@ -51,16 +51,16 @@ function parentsNodesContainClass(node, className) {
 }
 
 function handleCloseAllMenus(event) {
-    FILTER_OPTIONS.map(({selector, options}) => {
+    FILTER_OPTIONS.map(({selector}) => {
         const filterTabElement = document.querySelector(selector);
 
         if (filterTabElement && !parentsNodesContainClass(event.target, selector)) {
             const menu = filterTabElement.querySelector('.rc-filters__menu');
             menu && filterTabElement.removeChild(menu);
+            filterTabElement.style.border = '1px solid transparent';
         }
     });
 }
-
 
 
 // Показать все фильтры
@@ -110,6 +110,7 @@ function handleOpenMenuFilter(event, selector, menu, title) {
         if (filterTabElement.querySelector('.rc-filters__menu')) {
             try {
                 filterTabElement.removeChild(menu);
+                filterTabElement.style.border = '1px solid transparent';
             } catch (e) {}
         }
 
@@ -118,6 +119,8 @@ function handleOpenMenuFilter(event, selector, menu, title) {
     } else {
         handleCloseAllMenus(event);
         filterTabElement.appendChild(menu);
+
+        filterTabElement.style.border = '1px solid rgba(0, 155, 71, 1)';
     }
 }
 
@@ -173,4 +176,21 @@ window.addEventListener('click', (event) => {
 
 handleSetMenusForAllFiltersTabs();
 
-// При ресайзинге часть меню перемещаются в дополнительные меню
+
+// Выбор количества комнат rc-filters__count-of-rooms
+
+const countOfRoomsContainer = document.querySelector('.rc-filters__count-of-rooms');
+const rooms = countOfRoomsContainer && countOfRoomsContainer.querySelectorAll('.button__secondary');
+
+rooms && rooms.forEach((roomButton, roomIndex) => {
+    roomButton.addEventListener('click', () => {
+        rooms.forEach((item) => {
+            item.style.background = 'rgba(55, 110, 164, 0.06)';
+            item.style.color = 'black';
+        });
+
+        roomButton.style.background = 'rgba(0, 155, 71, 1)';
+        roomButton.style.color = 'white';
+    });
+});
+

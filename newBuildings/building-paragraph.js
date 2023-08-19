@@ -12,8 +12,6 @@ paragraphsContainer && paragraphsContainer.forEach((paragraph) => {
     const content = contentContainer.querySelector('p');
     const bottom = contentContainer.querySelector('.building-description__paragraph__content__bottom');
 
-    console.log(content.clientHeight);
-
     button.addEventListener('click', () => {
         if (showAllParagraph) {
             contentContainer.style.maxHeight = `${content.clientHeight }px`;

@@ -22,7 +22,7 @@ function createNewCard(cardId) {
                     <!-- Slides -->
                     <div class="swiper-slide">
                         <div class="rc-apartment__image__rc">
-                            <img src="../assets/rc.png" alt="residential complex description">
+                            <img src="../assets/scheme.png" alt="residential complex description">
                         </div>
                     </div>
                     <div class="swiper-slide">
@@ -32,7 +32,7 @@ function createNewCard(cardId) {
                     </div>
                     <div class="swiper-slide">
                         <div class="rc-apartment__image__rc">
-                            <img src="../assets/rc.png" alt="residential complex description">
+                            <img src="../assets/scheme.png" alt="residential complex description">
                         </div>
                     </div>
                 </div>

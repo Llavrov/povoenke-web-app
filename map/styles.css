@@ -18,3 +18,9 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
+@media (max-width: 660px) {
+    .rc-filters__content__filters {
+        display: none;
+    }
+}

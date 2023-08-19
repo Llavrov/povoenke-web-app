@@ -68,7 +68,7 @@ p, h1, h2, h3 {
 }
 
 .title__medium {
-    font-family: TTCommonsRegular, sans-serif;
+    font-family: TTCommonsMedium, sans-serif;
     font-size: 22px;
     font-weight: 500;
     line-height: 24px;
@@ -113,8 +113,10 @@ p, h1, h2, h3 {
 }
 
 .underline__green {
+    text-decoration-color: rgba(0, 155, 71, 1);
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
     text-underline-offset: 0.5em;
-    text-decoration: underline rgba(0, 155, 71, 1) dashed;
 }
 
 @media (max-width: 1131px) {
@@ -193,6 +195,16 @@ header {
     width: 100%;
 }
 
+.header-nav__tab {
+    position: relative;
+}
+
+.header-nav__tab .rc-filters__menu {
+    top: 35px;
+    left: 0;
+    min-width: 160px !important;
+}
+
 .header-content ul {
     display: flex;
     gap: 24px;
@@ -255,6 +267,14 @@ header {
     gap: 8px;
 }
 
+.apartment-price {
+    justify-content: space-between;
+    display: none;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
 @media (max-width: 960px) {
     .header-content {
         justify-content: right;
@@ -262,6 +282,22 @@ header {
 
     .header-content ul {
         display: none;
+    }
+}
+
+@media (max-width: 660px) {
+    .apartment-price {
+        display: flex;
+    }
+
+    .apartment-price .button__secondary {
+        width: unset;
+        background: rgba(0, 155, 71, 1);
+        color: white;
+    }
+
+    .apartment-price .button__secondary:hover {
+        background: rgba(0, 155, 71, 0.8);
     }
 }
 
@@ -358,6 +394,16 @@ footer {
     cursor: pointer;
 }
 
+.social_networks__container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social_networks__container__mobile {
+    display: none;
+}
+
 .social_networks {
     display: flex;
     gap: 4px;
@@ -367,6 +413,34 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+@media (max-width: 800px) {
+    .social_networks__container {
+        display: none;
+    }
+
+    .social_networks__container__mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 40px;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer__contact-form,
+    .footer__contact-form__input {
+        flex-direction: column;
+    }
+
+    .footer__contact-form {
+        gap: 20px;
+        padding-bottom: 50px;
+    }
 }
 
 
@@ -391,6 +465,14 @@ footer {
     gap: 12px;
 }
 
+.gap-4 {
+    gap: 16px;
+}
+
+.gap-5 {
+    gap: 20px;
+}
+
 .w-full {
     width: 100%;
 }
@@ -413,6 +495,7 @@ footer {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
+    white-space: nowrap;
 }
 
 .button {
@@ -490,6 +573,33 @@ footer {
 }
 
 
+/*  Apartments menu  */
+
+
+.apartment-info__menu {
+    position: absolute;
+    z-index: 20;
+    top: -20px;
+    width: 200px;
+    min-height: 100px;
+    left: 30px;
+    background: white;
+    box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.08);
+    padding: 12px;
+    box-sizing: border-box;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    overflow: visible;
+    border-radius: 12px;
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+
 /*  RC filters - шапка с фильтрами объекта недвижимости  */
 
 
@@ -545,17 +655,25 @@ footer {
     user-select: none;
 }
 
+.rc-filters__count-of-rooms .button__secondary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .rc-filters__city,
 .rc-filters__builder {
     width: 100%;
     max-width: 228px;
     justify-content: space-between;
+    border: 1px solid transparent;
 }
 
 .rc-filters__banks {
     width: 100%;
     max-width: 245px;
     justify-content: space-between;
+    border: 1px solid transparent;
 }
 
 .rc-filters__price,
@@ -563,6 +681,7 @@ footer {
     width: 100%;
     max-width: 219px;
     justify-content: space-between;
+    border: 1px solid transparent;
 }
 
 .rc-filters__place,
@@ -571,6 +690,7 @@ footer {
     width: 100%;
     max-width: 195px;
     justify-content: space-between;
+    border: 1px solid transparent;
 }
 
 .rc-filters__content__filters-additional {
@@ -586,7 +706,7 @@ footer {
 .rc-filters__menu {
     position: absolute;
     z-index: 20;
-    top: 80px;
+    top: 88px;
     width: 100%;
     max-width: 240px;
     max-height: 200px;
@@ -595,6 +715,13 @@ footer {
     box-shadow: 0 14px 14px rgba(0, 0, 0, 0.05);
     overflow-y: scroll;
     border-radius: 12px;
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.rc-filters__menu::-webkit-scrollbar {
+    display: none;
 }
 
 .rc-filters__option {
@@ -637,7 +764,7 @@ footer {
 
     .rc-filters__content__filters__main,
     .rc-filters__content__filters__additional {
-        max-width: 300px;
+        max-width: 660px;
         flex-direction: column;
     }
 
@@ -656,7 +783,11 @@ footer {
     .rc-filters__finishing,
     .rc-filters__place,
     .rc-filters__date {
-        max-width: 300px;
+        max-width: 660px;
+    }
+
+    .rc-filters__menu {
+        max-width: 660px;
     }
 }
 
@@ -727,64 +858,72 @@ footer {
 
 @font-face {
     font-family: 'TTCommonsBlack';
-    src: url('fonts/TTCommonsBlack.otf') format('truetype');
+    src: url('fonts/TTCommons-Black.woff') format('woff'),
+    url('fonts/TTCommonsBlack.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'TTCommonsBold';
-    src: url('fonts/TTCommonsBold.otf') format('truetype');
+    src: url('fonts/TTCommons-Bold.woff') format('woff'),
+    url('fonts/TTCommonsBold.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'TTCommonsDemiBold';
-    src: url('fonts/TTCommonsDemiBold.otf') format('truetype');
+    src: url('fonts/TTCommons-DemiBold.woff') format('woff'),
+    url('fonts/TTCommonsDemiBold.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'TTCommonsExtraBold';
-    src: url('fonts/TTCommonsExtraBold.otf') format('truetype');
+    src: url('fonts/TTCommons-ExtraBold.woff') format('woff'),
+    url('fonts/TTCommonsExtraBold.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'TTCommonsExtraLight';
-    src: url('fonts/TTCommonsExtraLight.otf') format('truetype');
+    src: url('fonts/TTCommons-ExtraLight.woff') format('woff'),
+    url('fonts/TTCommonsExtraLight.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'TTCommonsLight';
-    src: url('fonts/TTCommonsLight.otf') format('truetype');
+    src: url('fonts/TTCommons-Light.woff') format('woff'),
+    url('fonts/TTCommonsLight.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
-
 @font-face {
     font-family: 'TTCommonsMedium';
-    src: url('fonts/TTCommonsMedium.otf') format('truetype');
+    src: url('fonts/TTCommons-Medium.woff') format('woff'),
+    url('fonts/TTCommonsMedium.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'TTCommonsRegular';
-    src: url('fonts/TTCommonsRegular.otf') format('truetype');
+    src: url('fonts/TTCommons-Regular.woff') format('woff'),
+    url('fonts/TTCommonsRegular.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'TTCommonsThin';
-    src: url('fonts/TTCommonsThin.otf') format('truetype');
+    src: url('fonts/TTCommons-Thin.woff') format('woff'),
+    url('fonts/TTCommonsThin.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

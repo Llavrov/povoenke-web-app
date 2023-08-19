@@ -1,4 +1,4 @@
-const HEIGHT_OF_ONE_ROW = 170;
+const HEIGHT_OF_ONE_ROW = 150;
 const HEIGHT_OF_MORTGAGE = '400px';
 const BUILDING_MORTGAGE_TABLE = '.apartment-mortgage__table__body';
 
@@ -13,6 +13,7 @@ showAllMortgageButton && showAllMortgageButton.addEventListener('click', () => {
     if (showAllMortgage) {
         mortgageContainer.style.maxHeight = `${HEIGHT_OF_ONE_ROW * mortgageRows.length}px`;
         showAllMortgage = false;
+        document.querySelector('.apartment-mortgage__table__body__bottom').style.display = 'none';
         showAllMortgageButton.innerHTML = `
             <p class="title__light title__green">
                 Скрыть
@@ -20,6 +21,7 @@ showAllMortgageButton && showAllMortgageButton.addEventListener('click', () => {
     } else {
         mortgageContainer.style.maxHeight = HEIGHT_OF_MORTGAGE;
         showAllMortgage = true;
+        document.querySelector('.apartment-mortgage__table__body__bottom').style.display = 'block';
         showAllMortgageButton.innerHTML = `
             <p class="title__light title__green">
                 Показать целиком
@@ -39,42 +41,42 @@ const mortgageHeaders = ['Банки', 'Стандартная', 'Господд
 
 const mortgageData = [
     {
-        banks: 'Дом РФ',
+        banks: ['Дом Рф', '../assets/banks/dom-rf.svg'],
         standard: '4,6%',
         government: '4,6%',
         family: '4,6%',
         marital: '4,6%',
     },
     {
-        banks: 'Дом РФ',
+        banks: ['Дом Рф', '../assets/banks/dom-rf.svg'],
         standard: '4,6%',
         government: '4,6%',
         family: '4,6%',
         marital: '4,6%',
     },
     {
-        banks: 'Дом РФ',
+        banks: ['Дом Рф', '../assets/banks/dom-rf.svg'],
         standard: '4,6%',
         government: '4,6%',
         family: '4,6%',
         marital: '4,6%',
     },
     {
-        banks: 'Дом РФ',
+        banks: ['Дом Рф', '../assets/banks/dom-rf.svg'],
         standard: '4,6%',
         government: '4,6%',
         family: '4,6%',
         marital: '4,6%',
     },
     {
-        banks: 'Дом РФ',
+        banks: ['Дом Рф', '../assets/banks/dom-rf.svg'],
         standard: '4,6%',
         government: '4,6%',
         family: '4,6%',
         marital: '4,6%',
     },
     {
-        banks: 'Дом РФ',
+        banks: ['Дом Рф', '../assets/banks/dom-rf.svg'],
         standard: '4,6%',
         government: '4,6%',
         family: '4,6%',
@@ -111,9 +113,10 @@ function createMortgageRow(mortgageData) {
             `;
         } else {
             column.innerHTML = `
-                <div class="horizontal mobile-header__container"> 
+                <div class="horizontal mobile-header__container gap-2">
+                    <img src="${info[1]}" alt="bank icon"> 
                     <p class="title__light">
-                        ${info}
+                        ${info[0]}
                     </p>
                 </div>
             `;
@@ -135,7 +138,90 @@ function createMortgageRow(mortgageData) {
 
 // Добавляем карточки таблицы ипотеки
 
+function parentsNodesContainClass(node, className) {
+    if (node?.parentNode?.classList?.contains(className))
+        return true;
+
+    if (node?.className !== className && node?.className != null) {
+        return parentsNodesContainClass(node.parentNode, className);
+    } else if (node?.className !== null) {
+        return false;
+    }
+}
+
 mortgageData.map((mortgage) => {
     const row = createMortgageRow(Object.values(mortgage));
     mortgageBodyContainer.appendChild(row);
 })
+
+// Модалка для "i" заголовков
+
+const INFO_ICON_OPTIONS = [
+    {
+        selector: '.info__icon__government',
+        title: 'Господдержка для семей с детьми',
+        description: 'Для семей, в которых с 1 января 2018 года родился первый или ещё один ребёнок',
+    },
+    {
+        selector: '.info__icon__family',
+        title: 'Господдержка для семей с детьми',
+        description: 'Для семей, в которых с 1 января 2018 года родился первый или ещё один ребёнок',
+    },
+    {
+        selector: '.info__icon__standard',
+        title: 'Господдержка для семей с детьми',
+        description: 'Для семей, в которых с 1 января 2018 года родился первый или ещё один ребёнок',
+    },
+];
+
+INFO_ICON_OPTIONS.forEach(({selector, description, title}) => {
+    const infoTabElement = document.querySelector(selector);
+
+    infoTabElement.addEventListener('click', () => {
+        INFO_ICON_OPTIONS.forEach(({selector, description, title}) => {
+            const infoIconTabElement = document.querySelector(selector);
+            const infoMenu = infoIconTabElement.querySelector('.apartment-info__menu');
+
+            if (infoMenu) {
+                try {
+                    infoIconTabElement.removeChild(infoMenu);
+                } catch (e) {}
+            }
+        });
+
+        const menu = document.createElement('div');
+        const titleEl = document.createElement('p');
+        const descriptionEl = document.createElement('p');
+
+        titleEl.className = 'title_small';
+        titleEl.innerHTML = title;
+
+        descriptionEl.classList.add('title_small');
+        descriptionEl.classList.add('title_gray');
+        descriptionEl.innerHTML = description;
+        descriptionEl.style.color = 'rgba(20, 51, 82, 0.65)';
+
+        menu.className = 'apartment-info__menu';
+        menu.appendChild(titleEl);
+        menu.appendChild(descriptionEl);
+
+        infoTabElement.appendChild(menu);
+    })
+})
+
+function handleCloseAllMenus(event) {
+    INFO_ICON_OPTIONS.map(({selector}) => {
+        const infoTabElement = document.querySelector(selector);
+
+        if (infoTabElement && !parentsNodesContainClass(event.target, selector)) {
+            const menu = infoTabElement.querySelector('.apartment-info__menu');
+            menu && infoTabElement.removeChild(menu);
+        }
+    });
+}
+
+window.addEventListener('click', (event) => {
+    if (!parentsNodesContainClass(event.target, 'apartment-mortgage__table__column')) {
+        handleCloseAllMenus(event);
+    }
+});

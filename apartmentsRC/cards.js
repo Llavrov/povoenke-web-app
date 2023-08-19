@@ -43,24 +43,26 @@ function createNewCard(cardId) {
         </div>
 
         <div class="rc-apartment__content">
-            <div class="rc-apartment__content__title">
-                <p class="title__medium">
-                    ЖК Новая Рига
-                </p>
-    
-                <p class="title__medium">
-                    5 000 000 р.
-                </p>
-            </div>
-    
-            <div class="rc-apartment__content__title">
-                <p class="title__light title__gray">
-                    Сдача в IV квартале 2022
-                </p>
-                
-                <p class="title__light title__gray">
-                    250 000 за м2
-                </p>
+            <div class="">
+                <div class="rc-apartment__content__title">
+                    <p class="title__medium">
+                        ЖК Новая Рига
+                    </p>
+        
+                    <p class="title__medium">
+                        5 000 000 р.
+                    </p>
+                </div>
+        
+                <div class="rc-apartment__content__title">
+                    <p class="title__light title__gray">
+                        Сдача в IV квартале 2022
+                    </p>
+                    
+                    <p class="title__light title__gray">
+                        250 000 за м2
+                    </p>
+                </div>
             </div>
     
             <div class="horizontal gap-2 rc-apartment__content__labels">

@@ -153,6 +153,10 @@
     .rc-apartments-container__content {
         justify-content: center;
     }
+
+    .rc-apartments-container {
+        padding: 20px 0;
+    }
 }
 
 
@@ -227,7 +231,7 @@
     gap: 8px;
     width: 100%;
     height: 100%;
-    padding: 8px 0 8px 20px;
+    padding: 16px 0 8px 24px;
     box-sizing: border-box;
 }
 
@@ -241,7 +245,7 @@
     flex-direction: column;
     gap: 4px;
     width: 60%;
-    margin-top: 4px;
+    margin-top: 8px;
 }
 
 .rc-apartment__content__list__mobile {
@@ -260,7 +264,7 @@
 }
 
 .rc-apartment__content__metro {
-    margin-top: 16px;
+    margin-top: 8px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -273,7 +277,8 @@
 
 .apartment-info__metro__icons__item {
     display: flex;
-    gap: 10px;
+    gap: 8px;
+    margin-bottom: 8px;
 }
 
 .apartment-info__metro__icon-metro,
