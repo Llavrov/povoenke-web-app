@@ -446,7 +446,7 @@
 .building-object-type-container {
     display: flex;
     justify-content: start;
-    gap: 20px;
+    gap: 8px;
     width: 100%;
     margin-top: 60px;
 }
@@ -647,7 +647,7 @@
 .building-mortgage__tab-bar {
     display: flex;
     gap: 40px;
-    padding: 20px;
+    padding: 20px 20px 0;
     overflow-x: auto;
     margin: 0 -20px;
 }
@@ -666,6 +666,7 @@
 
 .building-mortgage__table {
     margin: 0 -20px;
+    padding: 25px 0 0;
     position: relative;
     max-height: 400px;
     overflow: hidden;
@@ -688,13 +689,16 @@
     max-width: 840px;
     border-collapse: collapse;
     text-align: left;
-    overflow: hidden;
 }
 
 .building-mortgage__table__column {
     display: flex;
     justify-content: center;
     gap: 8px;
+}
+
+.apartment-mortgage__table__info__icon {
+    position: relative;
 }
 
 td, th {

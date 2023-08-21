@@ -541,12 +541,6 @@
     position: relative;
 }
 
-.apartment-mortgage__table__column {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-}
-
 td, th {
     padding: 20px 16px;
 }

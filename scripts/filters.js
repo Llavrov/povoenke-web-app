@@ -114,8 +114,14 @@ function handleOpenMenuFilter(event, selector, menu, title) {
             } catch (e) {}
         }
 
-        if (isOption && title)
+        if (isOption && title) {
             title.innerHTML = event.target.innerHTML;
+            const options = event.target.parentNode.querySelectorAll('.rc-filters__option');
+            options.forEach((option) => {
+                option.classList.remove('rc-filters__option__active');
+            })
+            event.target.classList.add('rc-filters__option__active');
+        }
     } else {
         handleCloseAllMenus(event);
         filterTabElement.appendChild(menu);
