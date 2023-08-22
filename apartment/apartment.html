@@ -15,13 +15,13 @@
             <div class="header-upper">
                 <div class="header-upper__content content-border">
                     <div class="header-upper__about">
-                        <p class="button title__small title__gray">
+                        <a href="#" class="button title__link title__small title__gray">
                             О компании
-                        </p>
+                        </a>
 
-                        <p class="button title__small title__gray">
+                        <a href="#" class="button title__link title__small title__gray">
                             Контакты
-                        </p>
+                        </a>
                     </div>
 
                     <div class="header-upper__geo">
@@ -38,7 +38,15 @@
 
             <header>
                 <div class="header-container content-border">
-                    <img src="../assets/logotype.svg" alt="logotype">
+                    <div class="horizontal gap-3">
+                        <div class="burger-menu">
+                            <img src="../assets/burger-menu.svg" alt="burger menu">
+                        </div>
+
+                        <div class="logotype">
+                            <img src="../assets/logotype.svg" alt="logotype">
+                        </div>
+                    </div>
 
                     <div class="header-content">
                         <ul>
@@ -472,7 +480,7 @@
             </div>
 
             <div class="apartment-object-type-container content-border no-scrollbar">
-                <div onclick="" class="button apartment-object-type__item apartment-object-type__item__active">
+                <div class="button apartment-object-type__item apartment-object-type__item__active">
                     <p class="title__light no-whitespace">
                         Описание
                     </p>
@@ -543,35 +551,25 @@
                 </div>
 
                 <div class="apartment-description__tab-bar">
-                    <div class="button apartment-description__tab-bar__item apartment-description__tab-bar__item__active">
-                        <p class="title__light no-whitespace">
+                    <div class="button apartment__tab-bar__item apartment__tab-bar__item__active">
+                        <p class="title__light no-whitespace apartment-tab__about-apartment">
                             О квартире
                         </p>
                     </div>
 
-                    <div class="button apartment-description__tab-bar__item">
+                    <div class="button apartment__tab-bar__item apartment-tab__details">
                         <p class="title__light no-whitespace">
                             Подробные характеристики
                         </p>
                     </div>
                 </div>
 
-                <div class="apartment-description__paragraphs">
-                    <div class="apartment-description__paragraph">
-                        <div class="apartment-description__paragraph__content">
-                            <p class="title__light">
-                                Жилой район «Саларьево парк» расположен в Новой Москве, в 6 километрах от МКАД по Киевскому шоссе.
-                                В пяти минутах пешком находится станция метро «Филатов Луг».
-                                ТРЦ «Саларис» и крупные торговые центры — «РИО», Metro Cash & Carry, «Леруа Мерлен» — всего в пяти минутах езды на машине.
-                            </p>
-                        </div>
-
-                        <div class="button">
-                            <p class="title__light title__green">
-                                Показать полностью
-                            </p>
-                        </div>
-                    </div>
+                <div class="apartment-description__paragraphs apartment-description__details__paragraphs">
+                    <p class="title__light">
+                        Жилой район «Саларьево парк» расположен в Новой Москве, в 6 километрах от МКАД по Киевскому шоссе.
+                        В пяти минутах пешком находится станция метро «Филатов Луг».
+                        ТРЦ «Саларис» и крупные торговые центры — «РИО», Metro Cash & Carry, «Леруа Мерлен» — всего в пяти минутах езды на машине.
+                    </p>
                 </div>
 
             </div>
@@ -590,13 +588,13 @@
                 </div>
 
                 <div class="apartment-mortgage__tab-bar no-scrollbar">
-                    <div class="button apartment-mortgage__tab-bar__item apartment-mortgage__tab-bar__item__active">
+                    <div class="button apartment__tab-bar__item apartment__tab-bar__item__active">
                         <p class="title__light no-whitespace">
                             Предложения банков
                         </p>
                     </div>
 
-                    <div class="button apartment-mortgage__tab-bar__item">
+                    <div class="button apartment__tab-bar__item">
                         <p class="title__light no-whitespace">
                             Все банки
                         </p>
@@ -653,7 +651,7 @@
                 </div>
 
                 <div class="button apartment-mortgage__show-all">
-                    <p class="title__light title__green">
+                    <p class="title__extra-medium title__link title__green">
                         Показать целиком
                     </p>
                 </div>
@@ -667,13 +665,13 @@
                 </div>
 
                 <div class="apartment-description__tab-bar">
-                    <div class="button apartment-description__tab-bar__item apartment-description__tab-bar__item__active">
+                    <div class="button apartment__tab-bar__item apartment__tab-bar__item__active">
                         <p class="title__light no-whitespace">
                             Описание
                         </p>
                     </div>
 
-                    <div class="button apartment-description__tab-bar__item">
+                    <div class="button apartment__tab-bar__item">
                         <p class="title__light no-whitespace">
                             Подробные характеристики
                         </p>
@@ -692,7 +690,7 @@
                         </div>
 
                         <div class="button paragraph__show-all">
-                            <p class="title__light title__green">
+                            <p class="title__extra-medium title__link title__green">
                                 Показать полностью
                             </p>
                         </div>
@@ -718,7 +716,7 @@
                         </div>
 
                         <div class="button paragraph__show-all">
-                            <p class="title__light title__green">
+                            <p class="title__extra-medium title__link title__green">
                                 Показать полностью
                             </p>
                         </div>
@@ -744,7 +742,7 @@
                         </div>
 
                         <div class="button paragraph__show-all">
-                            <p class="title__light title__green">
+                            <p class="title__extra-medium title__link title__green">
                                 Показать полностью
                             </p>
                         </div>
@@ -915,7 +913,7 @@
                                 </div>
                             </div>
 
-                            <p class="title__light title__gray">
+                            <p class="title__light title__gray footer__ooo">
                                 © 2022 Общество с ограниченной ответственностью «поВоенке» Москва, Хорошёвское шоссе, 38к1, 5 этаж, офис 521, ОГРН 5147746388543 ИНН 7725849789. Политика конфиденциальности.
                             </p>
                         </div>
@@ -1013,6 +1011,12 @@
                                 </a>
                             </div>
                         </div>
+
+                        <div class="footer__ooo__mobile">
+                            <p class="title__light title__gray">
+                                © 2022 Общество с ограниченной ответственностью «поВоенке» Москва, Хорошёвское шоссе, 38к1, 5 этаж, офис 521, ОГРН 5147746388543 ИНН 7725849789. Политика конфиденциальности.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </footer>
@@ -1029,6 +1033,9 @@
 
         <!--  rc-cards: Подключение функционала к таблице с ипотекой  -->
         <script type="module" src="show-all-mortgage.js"></script>
+
+        <!--  Подключение функционала к табам  -->
+        <script type="module" src="tab-bars.js"></script>
 
         <!--  Swiper slider  -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

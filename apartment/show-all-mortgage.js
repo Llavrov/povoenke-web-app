@@ -113,7 +113,7 @@ function createMortgageRow(mortgageData) {
             `;
         } else {
             column.innerHTML = `
-                <div class="horizontal mobile-header__container gap-2">
+                <div class="horizontal mobile-header__container__bank gap-4">
                     <img src="${info[1]}" alt="bank icon"> 
                     <p class="title__light">
                         ${info[0]}

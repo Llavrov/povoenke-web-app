@@ -323,7 +323,7 @@
 }
 
 .building-info__title__tag {
-    padding: 4px 10px;
+    padding: 6px 10px 4px;
     background: rgba(55, 110, 164, 0.06);
     border-radius: 20px;
 }
@@ -345,7 +345,11 @@
 .building-info__more-info__item {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 11px;
+}
+
+.building-info__more-info__item p:first-child {
+    color: rgba(23, 59, 94, 0.35);
 }
 
 @media (max-width: 1131px) {
@@ -482,7 +486,7 @@
 
 .building-apartments-container {
     margin-top: 60px;
-    margin-bottom: 100px;
+    margin-bottom: 96px;
     width: 100%;
 }
 
@@ -652,7 +656,7 @@
     margin: 0 -20px;
 }
 
-.building-mortgage__tab-bar__item {
+.building-mortgage__tab-bar__item p {
     color: rgba(17, 34, 51, 0.35);
 }
 
@@ -664,6 +668,10 @@
     text-underline-offset: 0.5em;
 }
 
+.building-mortgage__tab-bar__item__active p {
+    color: rgba(0, 155, 71, 1);
+}
+
 .building-mortgage__table {
     margin: 0 -20px;
     padding: 25px 0 0;
@@ -673,8 +681,7 @@
     transition: 1s max-height;
 }
 
-.building-mortgage__table::after {
-    content: "";
+.building-mortgage__table__body__bottom {
     width: 100%;
     height: 28%;
     bottom: 0;
@@ -699,6 +706,7 @@
 
 .apartment-mortgage__table__info__icon {
     position: relative;
+    cursor: pointer;
 }
 
 td, th {
@@ -718,6 +726,12 @@ td:not(:first-child, :last-child) {
 .mobile-header__container {
     width: 100%;
     justify-content: space-between;
+    align-items: start;
+}
+
+.mobile-header__container__bank {
+    width: 100%;
+    align-items: center;
 }
 
 .mobile-header{
@@ -729,6 +743,10 @@ td:not(:first-child, :last-child) {
 }
 
 @media (max-width: 780px) {
+    .building-mortgage__table__body__bottom {
+        display: none;
+    }
+
     .building-mortgage__table__body tr {
         padding: 20px 16px;
         box-sizing: border-box;
@@ -740,7 +758,15 @@ td:not(:first-child, :last-child) {
 
     td, th,
     .building-mortgage__table__body td {
-        padding: 10px 0;
+        padding: 10px 0 0;
+    }
+
+    .building-mortgage__table__body td:first-child {
+        padding: 0 0 10px;
+    }
+
+    .building-mortgage__table__body tr .button__green {
+        margin-top: 12px;
     }
 
     .building-mortgage__table::after,
@@ -848,6 +874,10 @@ td:not(:first-child, :last-child) {
     text-underline-offset: 0.5em;
 }
 
+.building-description__tab-bar__item__active p {
+    color: rgba(0, 155, 71, 1);
+}
+
 @media (max-width: 780px) {
     .building-description__builder,
     .building-description__fast-info,
@@ -863,7 +893,7 @@ td:not(:first-child, :last-child) {
     display: flex;
     flex-direction: column;
     gap: 28px;
-    max-width: 670px;
+    max-width: 740px;
     width: 100%;
     padding: 20px 0 90px;
 }
@@ -913,6 +943,12 @@ td:not(:first-child, :last-child) {
     background: #F2F2F2;
 }
 
+.building-geo-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .building-geo__address {
     display: flex;
     flex-direction: column;
@@ -935,6 +971,17 @@ td:not(:first-child, :last-child) {
 
     .building-geo__map {
         height: 250px;
+    }
+
+    .building-geo__metro,
+    .building-geo__address {
+        gap: 12px;
+    }
+
+    .building-geo-content {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
     }
 }
 

@@ -192,11 +192,11 @@ rooms && rooms.forEach((roomButton, roomIndex) => {
     roomButton.addEventListener('click', () => {
         rooms.forEach((item) => {
             item.style.background = 'rgba(55, 110, 164, 0.06)';
-            item.style.color = 'black';
+            item.querySelector('p').style.color = 'rgba(17, 33, 50, 1)';
         });
 
         roomButton.style.background = 'rgba(0, 155, 71, 1)';
-        roomButton.style.color = 'white';
+        roomButton.querySelector('p').style.color = 'white';
     });
 });
 

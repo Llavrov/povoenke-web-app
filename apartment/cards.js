@@ -37,7 +37,7 @@ function createNewCard(cardId) {
                     </div>
                 </div>
     
-                <div class="swiper-pagination ${cardId}-pagination"></div>
+                <div class="min-swiper-pagination ${cardId}-pagination"></div>
             </div>
         </div>
 
@@ -192,8 +192,10 @@ function createNewCard(cardId) {
                         </p>
                     </div>
                 </div>
-                <p class="title__light title__gray">ЖК "Новая Рига"</p>
-                <p class="title__light title__gray">Застройщик Гранель</p>
+                <div>
+                    <p class="title__light title__gray">ЖК "Новая Рига"</p>
+                    <p class="title__light title__gray">Застройщик Гранель</p>
+                </div>
             </div>
         </div>
     `;

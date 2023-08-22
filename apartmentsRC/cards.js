@@ -130,7 +130,7 @@ function createNewCard(cardId) {
             
             <div class="rc-apartment__content__metro">
                 <div class="rc-apartment__content__metro__item">
-                    <p class="title__light title__link">
+                    <a href="#" class="title__light title__link">
                         ЖК “Новая Рига”
                     </p>
                     
@@ -168,7 +168,7 @@ function createNewCard(cardId) {
                     
                     <div class="rc-apartment__content__metro__item">
                         <p class="title__light">ГК Гранель</p>
-                        <p class="title__light title__link">234 объекта</p>
+                        <a href="#" class="title__light title__link">234 объекта</a>
                     </div>
                 </div>
             </div>

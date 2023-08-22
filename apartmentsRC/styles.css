@@ -24,6 +24,14 @@
     height: 240px;
 }
 
+.rc-apartments-container__content,
+.rc-apartment,
+.rc-apartment__image,
+.rc-apartment__image .swiper {
+    width: 100%;
+    position: relative;
+}
+
 
 /*  Промо ЖК "Покупайте у застройщика"  */
 
@@ -117,6 +125,12 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.rc-apartments-container__filters .button__secondary {
+    width: unset;
+    max-width: unset;
+    padding-right: 50px;
 }
 
 .rc-apartments-container__filters {
@@ -254,7 +268,12 @@
 
 .rc-apartment__content__list__row {
     display: flex;
-    justify-content: space-between;
+    position: relative;
+    gap: 16px;
+}
+
+.rc-apartment__content__list__row p:first-child {
+    max-width: 70px;
 }
 
 .rc-apartment__content__list__row p,

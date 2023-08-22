@@ -17,6 +17,11 @@
         padding: 0 20px;
         box-sizing: border-box;
     }
+
+    .list-container .rc-filters {
+        padding-bottom: 20px;
+        margin-bottom: 40px;
+    }
 }
 
 
@@ -113,7 +118,7 @@
 .rc-cards-container {
     display: flex;
     flex-direction: column;
-    padding: 45px 0;
+    padding: 0 0 45px;
     gap: 45px;
 }
 

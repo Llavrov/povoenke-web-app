@@ -13,7 +13,7 @@ showAllMortgageButton && showAllMortgageButton.addEventListener('click', () => {
     if (showAllMortgage) {
         mortgageContainer.style.maxHeight = `${HEIGHT_OF_ONE_ROW * mortgageRows.length}px`;
         showAllMortgage = false;
-        document.querySelector('.apartment-mortgage__table__body__bottom').style.display = 'none';
+        document.querySelector('.building-mortgage__table__body__bottom').style.display = 'none';
         showAllMortgageButton.innerHTML = `
             <p class="title__light title__green">
                 Скрыть
@@ -21,7 +21,7 @@ showAllMortgageButton && showAllMortgageButton.addEventListener('click', () => {
     } else {
         mortgageContainer.style.maxHeight = HEIGHT_OF_MORTGAGE;
         showAllMortgage = true;
-        document.querySelector('.apartment-mortgage__table__body__bottom').style.display = 'block';
+        document.querySelector('.building-mortgage__table__body__bottom').style.display = 'block';
         showAllMortgageButton.innerHTML = `
             <p class="title__light title__green">
                 Показать целиком
@@ -97,7 +97,9 @@ function createMortgageRow(mortgageData) {
                             ${mortgageHeaders[index]}
                         </p>
     
-                        ${infoIcon}
+                        <div class="apartment-mortgage__table__info__icon info__icon__standard">
+                            ${infoIcon}                  
+                        </div>
                     </div>
                     
                     <div class="">
@@ -113,7 +115,7 @@ function createMortgageRow(mortgageData) {
             `;
         } else {
             column.innerHTML = `
-                <div class="horizontal mobile-header__container gap-2">
+                <div class="horizontal mobile-header__container__bank gap-4">
                     <img src="${info[1]}" alt="bank icon"> 
                     <p class="title__light">
                         ${info[0]}

@@ -57,11 +57,28 @@
         flex-direction: column;
         gap: 60px;
     }
+
+    .apartment-image-container {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 @media (max-width: 780px) {
+    .apartment-image-container.content-border {
+        padding: 0;
+    }
+
+    .apartment-image-wrapper {
+        border-radius: 0;
+        background: white;
+        border-top: 1px solid rgba(42, 84, 126, 0.16);
+        border-bottom: 1px solid rgba(42, 84, 126, 0.16);
+    }
+
     .apartment-image-container {
         margin-top: 0;
+        flex-direction: column;
     }
 
     .apartment-slider {
@@ -206,6 +223,10 @@
         flex: 1 50%;
     }
 
+    .apartment-info__more-info__item .title__medium {
+        font-family: TTCommonsRegular, sans-serif;
+    }
+
     .apartment-info__more-info__item:first-child,
     .apartment-info__more-info__item:nth-child(2) {
         padding-bottom: 20px;
@@ -276,7 +297,7 @@
 .apartment-object-type-container {
     display: flex;
     justify-content: start;
-    gap: 20px;
+    gap: 4px;
     width: 100%;
     margin: 60px 0;
 }
@@ -292,7 +313,7 @@
 .apartment-object-type__item__active {
     padding: 12px 28px;
     background: rgba(17, 34, 51, 0.06);
-    border-radius: 20px;
+    border-radius: 16px;
 }
 
 .apartment-object-type__item__active p {
@@ -492,16 +513,20 @@
     margin: 0 -20px;
 }
 
-.apartment-mortgage__tab-bar__item {
+.apartment-mortgage__tab-bar__item p {
     color: rgba(17, 34, 51, 0.35);
 }
 
-.apartment-mortgage__tab-bar__item__active {
+.apartment__tab-bar__item__active {
     color: rgba(0, 155, 71, 1);
     text-decoration-line: underline;
     text-decoration-color: rgba(0, 155, 71, 1);
     text-decoration-style: solid;
     text-underline-offset: 0.5em;
+}
+
+.apartment__tab-bar__item__active p {
+    color: rgba(0, 155, 71, 1);
 }
 
 .apartment-mortgage__table {
@@ -539,6 +564,7 @@
 
 .apartment-mortgage__table__info__icon {
     position: relative;
+    cursor: pointer;
 }
 
 td, th {
@@ -557,7 +583,13 @@ td:not(:first-child, :last-child) {
 
 .mobile-header__container {
     width: 100%;
-    /*justify-content: space-between;*/
+    justify-content: space-between;
+    align-items: start;
+}
+
+.mobile-header__container__bank {
+    width: 100%;
+    align-items: center;
 }
 
 .mobile-header{
@@ -584,7 +616,15 @@ td:not(:first-child, :last-child) {
 
     td, th,
     .apartment-mortgage__table__body td {
-        padding: 10px 0;
+        padding: 10px 0 0;
+    }
+
+    .apartment-mortgage__table__body td:first-child {
+        padding: 0 0 10px;
+    }
+
+    .apartment-mortgage__table__body tr .button__green {
+        margin-top: 12px;
     }
 
     .apartment-mortgage__table {
@@ -678,16 +718,20 @@ td:not(:first-child, :last-child) {
     padding: 20px 0;
 }
 
-.apartment-description__tab-bar__item {
+.apartment__tab-bar__item p {
     color: rgba(17, 34, 51, 0.35);
 }
 
-.apartment-description__tab-bar__item__active {
+.apartment__tab-bar__item__active {
     color: rgba(0, 155, 71, 1);
     text-decoration-line: underline;
     text-decoration-color: rgba(0, 155, 71, 1);
     text-decoration-style: solid;
     text-underline-offset: 0.5em;
+}
+
+.apartment__tab-bar__item__active p {
+    color: rgba(0, 155, 71, 1);
 }
 
 @media (max-width: 780px) {
@@ -708,9 +752,9 @@ td:not(:first-child, :last-child) {
     display: flex;
     flex-direction: column;
     gap: 28px;
-    max-width: 670px;
+    max-width: 740px;
     width: 100%;
-    padding: 20px 0 90px;
+    padding: 0 0 90px;
 }
 
 .apartment-description__paragraph__content {
@@ -986,10 +1030,6 @@ td:not(:first-child, :last-child) {
     margin-top: 5px;
 }
 
-.rc-apartment__content__metro__mobile {
-    display: block;
-}
-
 .rc-apartment__content__list__mobile {
     display: flex;
 }
@@ -1015,5 +1055,15 @@ td:not(:first-child, :last-child) {
     .apartment-nearest-complex-container {
         height: 550px;
         gap: 20px;
+    }
+
+    .rc-apartment__content__metro__mobile {
+        display: flex;
+        gap: 12px;
+        flex-direction: column;
+    }
+
+    .rc-apartment__content__title p {
+        font-size: 20px;
     }
 }

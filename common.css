@@ -6,6 +6,7 @@ body, html {
 p, h1, h2, h3 {
     padding: 0;
     margin: 0;
+    color: rgba(17, 33, 50, 1);
 }
 
 .swiper {
@@ -21,8 +22,26 @@ p, h1, h2, h3 {
     height: 3px !important;
 }
 
+.min-swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    z-index: 50;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.min-swiper-pagination .swiper-pagination-bullet {
+    width: 27px !important;
+    background: #2A547E80 !important;
+}
+
 .swiper-pagination-bullet-active {
     background: rgba(255, 255, 255, 1) !important;
+}
+
+.min-swiper-pagination .swiper-pagination-bullet-active {
+    background: #173B5E59 !important;
 }
 
 /* Chrome, Safari and Opera */
@@ -119,6 +138,12 @@ p, h1, h2, h3 {
     text-underline-offset: 0.5em;
 }
 
+.dashed__gray {
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px dashed rgba(23, 59, 94, 0.35);
+}
+
 @media (max-width: 1131px) {
     .title__large {
         font-size: 34px;
@@ -128,8 +153,14 @@ p, h1, h2, h3 {
 
 @media (max-width: 780px) {
     .title__large {
+        font-family: TTCommonsMedium, sans-serif;
         font-size: 28px;
         line-height: 28px;
+    }
+
+    .title__large__xs,
+    .title__large__xxs {
+        font-family: TTCommonsMedium, sans-serif;
     }
 
     .title__large__xs {
@@ -146,6 +177,11 @@ p, h1, h2, h3 {
 
 /*  Header  */
 
+
+.burger-menu,
+.mobile-menu {
+    display: none;
+}
 
 .header-upper {
     box-sizing: border-box;
@@ -283,6 +319,11 @@ header {
     .header-content ul {
         display: none;
     }
+
+    .burger-menu,
+    .mobile-menu {
+        display: block;
+    }
 }
 
 @media (max-width: 660px) {
@@ -299,6 +340,11 @@ header {
     .apartment-price .button__secondary:hover {
         background: rgba(0, 155, 71, 0.8);
     }
+
+    .logotype img {
+        width: 140px;
+        height: 35px;
+    }
 }
 
 @media (max-width: 460px) {
@@ -311,6 +357,28 @@ header {
     .header-contacts {
         justify-content: right;
     }
+}
+
+
+/*  mobile-menu  */
+
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 110;
+    padding: 0 20px 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Enable scrolling within the menu */
+    overscroll-behavior: contain;
+}
+
+.mobile-menu header .header-container {
+    padding: 0;
 }
 
 
@@ -415,6 +483,14 @@ footer {
     gap: 16px;
 }
 
+.footer__ooo__mobile {
+    display: block;
+}
+
+.footer__ooo__mobile {
+    display: none;
+}
+
 @media (max-width: 800px) {
     .social_networks__container {
         display: none;
@@ -439,7 +515,19 @@ footer {
 
     .footer__contact-form {
         gap: 20px;
-        padding-bottom: 50px;
+        padding: 20px 0 50px;
+    }
+
+    .footer__container {
+        padding: 20px 0 50px;
+    }
+
+    .footer__ooo {
+        display: none;
+    }
+
+    .footer__ooo__mobile {
+        display: block;
     }
 }
 
@@ -479,6 +567,28 @@ footer {
 
 .ml-1 {
     margin-left: 4px;
+}
+
+
+/*  Icons  */
+
+
+.apartment-info__metro__icon-metro p,
+.apartment-info__metro__icon-train p,
+.apartment-info__metro__icon-highway p,
+.apartment-info__metro__on-foot p,
+.apartment-info__metro__on-car p,
+.metro-icon__green p,
+.building-info__metro__icon-metro p,
+.building-info__metro__on-foot p,
+.building-info__metro__icon-train p,
+.building-info__metro__on-car p,
+.building-info__metro__icon-highway p,
+.building-info__metro__on-car p {
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -570,6 +680,37 @@ footer {
 
 .button__center {
     justify-content: center;
+}
+
+.paragraph__details-container {
+    width: 100%;
+    position: relative;
+    padding-top: 20px;
+    gap: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.paragraph__details__content {
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.paragraph__details__row {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    max-width: 345px;
+}
+
+@media (max-width: 780px) {
+    .paragraph__details__content {
+        flex-direction: column;
+    }
 }
 
 
@@ -715,7 +856,7 @@ footer {
     background: white;
     box-shadow: 0 14px 14px rgba(0, 0, 0, 0.05);
     overflow-y: scroll;
-    border-radius: 12px;
+    border-radius: 5px 5px 15px 15px;
 
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
@@ -771,7 +912,7 @@ footer {
     .rc-filters__content__filters {
         align-items: center;
         justify-content: start;
-        height: 350px;
+        height: 380px;
     }
 
     .rc-filters__content__filters__main,

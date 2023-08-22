@@ -7,20 +7,20 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-    <title>List</title>
+    <title>Apartment RC</title>
 </head>
 <body>
     <div class="list-container">
         <div class="header-upper">
             <div class="header-upper__content content-border">
                 <div class="header-upper__about">
-                    <p class="button title__small title__gray">
+                    <a href="#" class="button title__link title__small title__gray">
                         О компании
-                    </p>
+                    </a>
 
-                    <p class="button title__small title__gray">
+                    <a href="#" class="button title__link title__small title__gray">
                         Контакты
-                    </p>
+                    </a>
                 </div>
 
                 <div class="header-upper__geo">
@@ -37,7 +37,15 @@
 
         <header>
             <div class="header-container content-border">
-                <img src="../assets/logotype.svg" alt="logotype">
+                <div class="horizontal gap-3">
+                    <div class="burger-menu">
+                        <img src="../assets/burger-menu.svg" alt="burger menu">
+                    </div>
+
+                    <div class="logotype">
+                        <img src="../assets/logotype.svg" alt="logotype">
+                    </div>
+                </div>
 
                 <div class="header-content">
                     <ul>
@@ -433,12 +441,12 @@
 
         <div class="content-border">
             <div class="rc-apartments-container__filters">
-                <div class="button__primary rc-cards-container__filters__show-on-map">
+                <div class="button__secondary rc-cards-container__filters__price">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.875 18.25H11.375C11.2093 18.25 11.0503 18.3158 10.9331 18.433C10.8159 18.5502 10.75 18.7092 10.75 18.875V20.125C10.75 20.2907 10.8159 20.4497 10.9331 20.5669C11.0503 20.6841 11.2093 20.75 11.375 20.75H13.875C14.0408 20.75 14.1997 20.6841 14.317 20.5669C14.4342 20.4497 14.5 20.2907 14.5 20.125V18.875C14.5 18.7092 14.4342 18.5502 14.317 18.433C14.1997 18.3158 14.0408 18.25 13.875 18.25ZM8.87502 15.75H7.00002V3.875C7.00002 3.70924 6.93417 3.55027 6.81696 3.43306C6.69975 3.31585 6.54078 3.25 6.37502 3.25H5.12503C4.95927 3.25 4.80029 3.31585 4.68308 3.43306C4.56587 3.55027 4.50003 3.70924 4.50003 3.875V15.75H2.62503C2.07073 15.75 1.79026 16.4234 2.18401 16.8168L5.30901 20.5668C5.42621 20.6839 5.58512 20.7497 5.75081 20.7497C5.91649 20.7497 6.0754 20.6839 6.1926 20.5668L9.3176 16.8168C9.709 16.4242 9.43049 15.75 8.87502 15.75ZM18.875 8.24999H11.375C11.2093 8.24999 11.0503 8.31584 10.9331 8.43305C10.8159 8.55026 10.75 8.70923 10.75 8.87499V10.125C10.75 10.2907 10.8159 10.4497 10.9331 10.5669C11.0503 10.6841 11.2093 10.75 11.375 10.75H18.875C19.0408 10.75 19.1997 10.6841 19.3169 10.5669C19.4342 10.4497 19.5 10.2907 19.5 10.125V8.87499C19.5 8.70923 19.4342 8.55026 19.3169 8.43305C19.1997 8.31584 19.0408 8.24999 18.875 8.24999ZM16.375 13.25H11.375C11.2093 13.25 11.0503 13.3158 10.9331 13.433C10.8159 13.5503 10.75 13.7092 10.75 13.875V15.125C10.75 15.2907 10.8159 15.4497 10.9331 15.5669C11.0503 15.6841 11.2093 15.75 11.375 15.75H16.375C16.5408 15.75 16.6997 15.6841 16.8169 15.5669C16.9342 15.4497 17 15.2907 17 15.125V13.875C17 13.7092 16.9342 13.5503 16.8169 13.433C16.6997 13.3158 16.5408 13.25 16.375 13.25ZM21.375 3.25H11.375C11.2093 3.25 11.0503 3.31585 10.9331 3.43306C10.8159 3.55027 10.75 3.70924 10.75 3.875V5.125C10.75 5.29076 10.8159 5.44973 10.9331 5.56694C11.0503 5.68415 11.2093 5.75 11.375 5.75H21.375C21.5408 5.75 21.6997 5.68415 21.8169 5.56694C21.9342 5.44973 22 5.29076 22 5.125V3.875C22 3.70924 21.9342 3.55027 21.8169 3.43306C21.6997 3.31585 21.5408 3.25 21.375 3.25Z" fill="#173B5E" fill-opacity="0.35"/>
                     </svg>
 
-                    <p class="title__light title__gray">
+                    <p class="title__light">
                         По цене
                     </p>
                 </div>
@@ -585,7 +593,7 @@
                             </div>
                         </div>
 
-                        <p class="title__light title__gray">
+                        <p class="title__light title__gray footer__ooo">
                             © 2022 Общество с ограниченной ответственностью «поВоенке» Москва, Хорошёвское шоссе, 38к1, 5 этаж, офис 521, ОГРН 5147746388543 ИНН 7725849789. Политика конфиденциальности.
                         </p>
                     </div>
@@ -682,6 +690,12 @@
                                 Гарантии
                             </a>
                         </div>
+                    </div>
+
+                    <div class="footer__ooo__mobile">
+                        <p class="title__light title__gray">
+                            © 2022 Общество с ограниченной ответственностью «поВоенке» Москва, Хорошёвское шоссе, 38к1, 5 этаж, офис 521, ОГРН 5147746388543 ИНН 7725849789. Политика конфиденциальности.
+                        </p>
                     </div>
                 </div>
             </div>
