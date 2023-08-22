@@ -200,25 +200,53 @@
                                 </div>
                             </div>
 
-                            <div class="rc-filters__content__filters__tab rc-filters__price">
+                            <div class="rc-filters__content__filters__tab rc-filters__ranged-price__container">
                                 <p class="title__light title__gray ml-1">
-                                    Цена
+                                    Цена, млн ₽
                                 </p>
 
-                                <div class="button__secondary rc-filters__price">
-                                    <div class="horizontal gap-2">
-                                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M2 18.332V20C2 21.3789 5.35938 22.5 9.5 22.5C13.6406 22.5 17 21.3789 17 20V18.332C15.3867 19.4688 12.4375 20 9.5 20C6.5625 20 3.61328 19.4688 2 18.332ZM14.5 7.5C18.6406 7.5 22 6.37891 22 5C22 3.62109 18.6406 2.5 14.5 2.5C10.3594 2.5 7 3.62109 7 5C7 6.37891 10.3594 7.5 14.5 7.5ZM2 14.2344V16.25C2 17.6289 5.35938 18.75 9.5 18.75C13.6406 18.75 17 17.6289 17 16.25V14.2344C15.3867 15.5625 12.4336 16.25 9.5 16.25C6.56641 16.25 3.61328 15.5625 2 14.2344ZM18.25 14.6641C20.4883 14.2305 22 13.4258 22 12.5V10.832C21.0938 11.4727 19.7617 11.9102 18.25 12.1797V14.6641ZM9.5 8.75C5.35938 8.75 2 10.1484 2 11.875C2 13.6016 5.35938 15 9.5 15C13.6406 15 17 13.6016 17 11.875C17 10.1484 13.6406 8.75 9.5 8.75ZM18.0664 10.9492C20.4102 10.5273 22 9.69922 22 8.75V7.08203C20.6133 8.0625 18.2305 8.58984 15.7227 8.71484C16.875 9.27344 17.7227 10.0234 18.0664 10.9492Z" fill="#173B5E" fill-opacity="0.35"/>
+                                <div class="button__secondary rc-filters__ranged-price">
+                                    <div class="horizontal rc-filters__ranged-price__content">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 17.832V19.5C2 20.8789 5.35938 22 9.5 22C13.6406 22 17 20.8789 17 19.5V17.832C15.3867 18.9688 12.4375 19.5 9.5 19.5C6.5625 19.5 3.61328 18.9688 2 17.832ZM14.5 7C18.6406 7 22 5.87891 22 4.5C22 3.12109 18.6406 2 14.5 2C10.3594 2 7 3.12109 7 4.5C7 5.87891 10.3594 7 14.5 7ZM2 13.7344V15.75C2 17.1289 5.35938 18.25 9.5 18.25C13.6406 18.25 17 17.1289 17 15.75V13.7344C15.3867 15.0625 12.4336 15.75 9.5 15.75C6.56641 15.75 3.61328 15.0625 2 13.7344ZM18.25 14.1641C20.4883 13.7305 22 12.9258 22 12V10.332C21.0938 10.9727 19.7617 11.4102 18.25 11.6797V14.1641ZM9.5 8.25C5.35938 8.25 2 9.64844 2 11.375C2 13.1016 5.35938 14.5 9.5 14.5C13.6406 14.5 17 13.1016 17 11.375C17 9.64844 13.6406 8.25 9.5 8.25ZM18.0664 10.4492C20.4102 10.0273 22 9.19922 22 8.25V6.58203C20.6133 7.5625 18.2305 8.08984 15.7227 8.21484C16.875 8.77344 17.7227 9.52344 18.0664 10.4492Z" fill="#173B5E" fill-opacity="0.35"/>
                                         </svg>
 
-                                        <p class="title__light no-whitespace">
-                                            Выбрать
-                                        </p>
+                                        <div class="form_control">
+                                            <div class="horizontal form_control_container gap-1">
+                                                <div class="title__light">от</div>
+                                                <div class="title__light form_control_container__time__input" id="fromInput">
+                                                    4
+                                                </div>
+                                                <!--  <input class="title__light form_control_container__time__input" type="text" id="fromInput" value="10" min="0" max="100"/>  -->
+                                            </div>
+
+                                            <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_1684_22476)">
+                                                    <line x1="0.5" y1="11.5" x2="11.5" y2="11.5" stroke="#173B5E" stroke-opacity="0.35"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1684_22476">
+                                                        <rect width="11" height="24" fill="white" transform="translate(0.5)"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+
+                                            <div class="horizontal form_control_container gap-1">
+                                                <div class="title__light">до</div>
+                                                <div class="title__light form_control_container__time__input" id="toInput">
+                                                    28
+                                                </div>
+                                                <!--  <input class="title__light form_control_container__time__input" type="text" id="toInput" value="30" min="0" max="100"/>  -->
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M13.2333 8.2418L9.99998 11.4751L6.76665 8.2418C6.44165 7.9168 5.91665 7.9168 5.59165 8.2418C5.26665 8.5668 5.26665 9.0918 5.59165 9.4168L9.41665 13.2418C9.74165 13.5668 10.2667 13.5668 10.5917 13.2418L14.4166 9.4168C14.7416 9.0918 14.7416 8.5668 14.4166 8.2418C14.0916 7.92513 13.5583 7.9168 13.2333 8.2418Z" fill="#173B5E" fill-opacity="0.35"/>
-                                    </svg>
+                                    <div class="range_container">
+                                        <div class="sliders_control">
+                                            <input id="fromSlider" type="range" value="10" min="0" max="100"/>
+                                            <input id="toSlider" type="range" value="30" min="0" max="100"/>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -662,6 +690,9 @@
 
     <!--  rc-filters: Открыть все фильтры  -->
     <script type="module" src="../scripts/filters.js"></script>
+
+    <!--  rc-filters: Фильтер с двумя ползунками  -->
+    <script type="module" src="./ranged-filter.js"></script>
 
     <!--  Swiper slider  -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

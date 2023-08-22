@@ -647,7 +647,7 @@
 .building-mortgage__tab-bar {
     display: flex;
     gap: 40px;
-    padding: 20px 20px 0;
+    padding: 20px 20px 2px;
     overflow-x: auto;
     margin: 0 -20px;
 }
