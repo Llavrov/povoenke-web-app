@@ -196,6 +196,8 @@
 
 .rc-apartment__image {
     position: relative;
+    border-radius: 12px;
+    border: 1px solid #376EA40F;
 }
 
 .rc-apartment__image__logo {

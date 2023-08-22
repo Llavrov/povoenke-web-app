@@ -21,6 +21,11 @@ function createNewCard(cardId) {
                     src="../assets/logo.png"
                     alt="residential complex description"
                 >
+                
+                <div class="rc-card__image__logo__content">
+                    <p class="title__light title__white no-whitespace">ГК Гранель</p>
+                    <p class="title__light title__gray no-whitespace">234 объекта</p>
+                </div>
             </div>
             <!-- Slider main container  -->
             <!-- Класс свайпера мы определяем уникальный, чтобы в последствии инициализировать его отдельно каждый  -->
@@ -44,7 +49,7 @@ function createNewCard(cardId) {
                     </div>
                 </div>
     
-                <div class="swiper-pagination ${cardId}-pagination"></div>
+                <div class="swiper-pagination-new-buildings swiper-pagination ${cardId}-new-buildings-pagination"></div>
             </div>
         </div>
 
@@ -98,7 +103,7 @@ function createNewCard(cardId) {
 
         // If we need pagination
         pagination: {
-            el: `.${cardId}-pagination`,
+            el: `.${cardId}-new-buildings-pagination`,
         },
     });
 }
@@ -143,4 +148,22 @@ if (swiperContainer && swiperContainer.length && WINDOW_WIDTH > TOUCH_SCREEN) {
 
         container.appendChild(hoverSectionContainer);
     })
+}
+
+window.addEventListener('reset', () => {
+    const buildingsPagination = document.querySelector('.swiper-pagination-new-buildings');
+
+    if (document.body.clientWidth < TOUCH_SCREEN) {
+        buildingsPagination.classList.remove('swiper-pagination');
+    } else {
+        buildingsPagination.classList.add('swiper-pagination');
+    }
+});
+
+const buildingsPagination = document.querySelector('.swiper-pagination-new-buildings');
+
+if (document.body.clientWidth < TOUCH_SCREEN) {
+    buildingsPagination.classList.remove('swiper-pagination');
+} else {
+    buildingsPagination.classList.add('swiper-pagination');
 }

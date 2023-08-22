@@ -33,7 +33,8 @@ const infoIcon = `
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="20" height="20" rx="10" fill="#E5F5ED"/>
         <path d="M11.28 14H9.66V8.48H11.28V14ZM9.6 6.98C9.6 6.74 9.688 6.532 9.864 6.356C10.048 6.172 10.26 6.08 10.5 6.08C10.74 6.08 10.948 6.172 11.124 6.356C11.308 6.532 11.4 6.74 11.4 6.98C11.4 7.22 11.308 7.432 11.124 7.616C10.948 7.792 10.74 7.88 10.5 7.88C10.26 7.88 10.048 7.792 9.864 7.616C9.688 7.432 9.6 7.22 9.6 6.98Z" fill="#009B47"/>
-    </svg>`;
+    </svg>
+`;
 
 const mortgageHeaders = ['Банки', 'Стандартная', 'Господдержка', 'Семейная', 'Супружеская'];
 
@@ -97,9 +98,11 @@ function createMortgageRow(mortgageData) {
                             ${mortgageHeaders[index]}
                         </p>
     
-                        <div class="apartment-mortgage__table__info__icon info__icon__standard">
-                            ${infoIcon}                  
-                        </div>
+                        ${(index > 0 && index < info.length) ? (
+                            `<div class="apartment-mortgage__table__info__icon info__icon__standard">
+                                ${infoIcon}
+                            </div>`
+                        ) : ''}
                     </div>
                     
                     <div class="">
@@ -177,53 +180,60 @@ const INFO_ICON_OPTIONS = [
 ];
 
 INFO_ICON_OPTIONS.forEach(({selector, description, title}) => {
-    const infoTabElement = document.querySelector(selector);
+    const infoTabElements = document.querySelectorAll(selector);
 
-    infoTabElement.addEventListener('click', () => {
-        INFO_ICON_OPTIONS.forEach(({selector, description, title}) => {
-            const infoIconTabElement = document.querySelector(selector);
-            const infoMenu = infoIconTabElement.querySelector('.apartment-info__menu');
+    infoTabElements.forEach((infoTabElement) => {
+        infoTabElement.addEventListener('click', () => {
+            INFO_ICON_OPTIONS.forEach(({selector}) => {
+                const infoIconTabElements = document.querySelectorAll(selector);
+                infoIconTabElements.forEach((infoIconTabElement) => {
+                    const infoMenu = infoIconTabElement.querySelector('.apartment-info__menu');
 
-            if (infoMenu) {
-                try {
-                    infoIconTabElement.removeChild(infoMenu);
-                } catch (e) {}
-            }
-        });
+                    if (infoMenu) {
+                        try {
+                            infoIconTabElement.removeChild(infoMenu);
+                        } catch (e) {}
+                    }
+                })
+            });
 
-        const menu = document.createElement('div');
-        const titleEl = document.createElement('p');
-        const descriptionEl = document.createElement('p');
+            const menu = document.createElement('div');
+            const titleEl = document.createElement('p');
+            const descriptionEl = document.createElement('p');
 
-        titleEl.className = 'title_small';
-        titleEl.innerHTML = title;
+            titleEl.className = 'title_small';
+            titleEl.innerHTML = title;
 
-        descriptionEl.classList.add('title_small');
-        descriptionEl.classList.add('title_gray');
-        descriptionEl.innerHTML = description;
-        descriptionEl.style.color = 'rgba(20, 51, 82, 0.65)';
+            descriptionEl.classList.add('title_small');
+            descriptionEl.classList.add('title_gray');
+            descriptionEl.innerHTML = description;
+            descriptionEl.style.color = 'rgba(20, 51, 82, 0.65)';
 
-        menu.className = 'apartment-info__menu';
-        menu.appendChild(titleEl);
-        menu.appendChild(descriptionEl);
+            menu.className = 'apartment-info__menu';
+            menu.appendChild(titleEl);
+            menu.appendChild(descriptionEl);
 
-        infoTabElement.appendChild(menu);
+            infoTabElement.appendChild(menu);
+        })
     })
 })
 
 function handleCloseAllMenus(event) {
-    INFO_ICON_OPTIONS.map(({selector}) => {
-        const infoTabElement = document.querySelector(selector);
+    INFO_ICON_OPTIONS.forEach(({selector}) => {
+        const infoIconTabElements = document.querySelectorAll(selector);
 
-        if (infoTabElement && !parentsNodesContainClass(event.target, selector)) {
-            const menu = infoTabElement.querySelector('.apartment-info__menu');
-            menu && infoTabElement.removeChild(menu);
-        }
+        infoIconTabElements.forEach((infoTabElement) => {
+            if (infoTabElement && !parentsNodesContainClass(event.target, selector)) {
+                const menu = infoTabElement.querySelector('.apartment-info__menu');
+
+                menu && infoTabElement.removeChild(menu);
+            }
+        })
     });
 }
 
 window.addEventListener('click', (event) => {
-    if (!parentsNodesContainClass(event.target, 'building-mortgage__table__column')) {
+    if (!parentsNodesContainClass(event.target, 'mobile-header__container')) {
         handleCloseAllMenus(event);
     }
 });

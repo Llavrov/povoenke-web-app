@@ -16,6 +16,15 @@ p, h1, h2, h3 {
     border-radius: 12px;
 }
 
+.swiper-pagination-new-buildings {
+    position: absolute;
+    bottom: 10px;
+    z-index: 50;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .swiper-pagination-bullet {
     width: 40px !important;
     border-radius: 3px !important;
@@ -121,6 +130,10 @@ p, h1, h2, h3 {
 
 .title__gray {
     color: rgba(20, 51, 82, 0.65);
+}
+
+.title__white {
+    color: white;
 }
 
 .title__green {

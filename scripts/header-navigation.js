@@ -40,8 +40,12 @@ function handleCloseAllMenus(event) {
 }
 
 window.addEventListener('resize', () => {
-    handleSwitchShowAllFilters();
-    setTimeout(() => handleSwitchShowAllFilters(), 0);
+    // handleSwitchShowAllFilters();
+    setTimeout(() => {
+        try {
+            handleSwitchShowAllFilters()
+        } catch (e) {}
+    }, 0);
 });
 
 // При нажатии на таб бар открывается выпадающее меню
