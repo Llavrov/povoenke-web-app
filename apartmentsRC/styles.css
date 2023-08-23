@@ -24,14 +24,15 @@
     height: 240px;
 }
 
-.rc-apartments-container__content,
-.rc-apartment,
-.rc-apartment__image,
-.rc-apartment__image .swiper {
-    width: 100%;
-    position: relative;
+@media (max-width: 660px) {
+    .rc-apartments-container__content,
+    .rc-apartment,
+    .rc-apartment__image,
+    .rc-apartment__image .swiper {
+        width: 100%;
+        position: relative;
+    }
 }
-
 
 /*  Промо ЖК "Покупайте у застройщика"  */
 

@@ -102,6 +102,13 @@ p, h1, h2, h3 {
     line-height: 24px;
 }
 
+.title__normal-medium {
+    font-family: TTCommonsMedium, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
 .title__extra-medium {
     font-family: TTCommonsRegular, sans-serif;
     font-size: 18px;
@@ -592,6 +599,7 @@ footer {
 .apartment-info__metro__on-foot p,
 .apartment-info__metro__on-car p,
 .metro-icon__green p,
+.icon__on-foot p,
 .building-info__metro__icon-metro p,
 .building-info__metro__on-foot p,
 .building-info__metro__icon-train p,
@@ -709,7 +717,7 @@ footer {
     width: 100%;
     position: relative;
     justify-content: space-between;
-    gap: 20px;
+    gap: 80px;
 }
 
 .paragraph__details__row {

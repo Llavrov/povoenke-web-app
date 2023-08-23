@@ -201,11 +201,11 @@ INFO_ICON_OPTIONS.forEach(({selector, description, title}) => {
             const titleEl = document.createElement('p');
             const descriptionEl = document.createElement('p');
 
-            titleEl.className = 'title_small';
+            titleEl.className = 'title__light';
             titleEl.innerHTML = title;
 
-            descriptionEl.classList.add('title_small');
-            descriptionEl.classList.add('title_gray');
+            descriptionEl.classList.add('title__small');
+            descriptionEl.classList.add('title__gray');
             descriptionEl.innerHTML = description;
             descriptionEl.style.color = 'rgba(20, 51, 82, 0.65)';
 

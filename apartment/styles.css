@@ -837,6 +837,7 @@ td:not(:first-child, :last-child) {
 
     .apartment-geo__metro {
         gap: 8px;
+        flex-direction: column;
     }
 }
 
@@ -1041,6 +1042,12 @@ td:not(:first-child, :last-child) {
     display: none;
 }
 
+.rc-apartment__content__metro__mobile {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+}
+
 .rc-apartment__content {
     margin-top: 20px;
     padding: 0;
@@ -1055,12 +1062,6 @@ td:not(:first-child, :last-child) {
     .apartment-nearest-complex-container {
         height: 550px;
         gap: 20px;
-    }
-
-    .rc-apartment__content__metro__mobile {
-        display: flex;
-        gap: 12px;
-        flex-direction: column;
     }
 
     .rc-apartment__content__title p {
