@@ -527,6 +527,14 @@
     flex: 1 25%;
 }
 
+.building-apartments__flat-list__title__item:nth-child(2) {
+    flex: 1 30%;
+}
+
+.building-apartments__flat-list__title__item:last-child {
+    flex: 1 17%;
+}
+
 .building-apartments__flat-list__title__item .title__gray {
     color: rgba(23, 59, 94, 0.35);
 }
@@ -546,6 +554,7 @@
     margin-left: -16px;
     border-radius: 16px;
     position: relative;
+    cursor: pointer;
 }
 
 .building-apartments__flat-list__item:hover {
@@ -560,6 +569,14 @@
 .building-apartments__flat-list__item a {
     display: flex;
     flex: 1 25%;
+}
+
+.building-apartments__flat-list__item p:nth-child(2) {
+    flex: 1 30%;
+}
+
+.building-apartments__flat-list__item p:last-child {
+    flex: 1 17%;
 }
 
 .building-apartments__image {
@@ -895,7 +912,7 @@ td:not(:first-child, :last-child) {
     gap: 28px;
     max-width: 740px;
     width: 100%;
-    padding: 20px 0 90px;
+    padding: 20px 0 80px;
 }
 
 .building-description__paragraph__content {
@@ -920,7 +937,11 @@ td:not(:first-child, :last-child) {
 
 @media (max-width: 780px) {
     .building-description__paragraphs {
-        padding: 28px 0;
+        padding: 16px 0;
+    }
+
+    .building-description__paragraphs .building-description__paragraph:not(:first-child) {
+        display: none;
     }
 }
 
@@ -997,6 +1018,8 @@ td:not(:first-child, :last-child) {
     justify-content: center;
     gap: 40px;
     background: rgba(55, 110, 164, 0.06);
+    padding-bottom: 64px;
+    box-sizing: border-box;
 }
 
 .building-nearest-complex-content {

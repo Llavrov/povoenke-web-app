@@ -31,10 +31,12 @@ function parentsNodesContainClass(node, className) {
 function handleCloseAllMenus(event) {
     HEADER_OPTIONS.map(({selector, options}) => {
         const filterTabElement = document.querySelector(selector);
+        const iconArrow = filterTabElement.querySelector('.header-content__icon__arrow');
 
         if (filterTabElement && !parentsNodesContainClass(event.target, selector)) {
             const menu = filterTabElement.querySelector('.rc-filters__menu');
             menu && filterTabElement.removeChild(menu);
+            iconArrow.style.transform = 'rotate(0)';
         }
     });
 }
@@ -54,16 +56,19 @@ function handleOpenMenuFilter(event, selector, menu) {
     const filterTabElement = document.querySelector(selector);
 
     const isVisible = filterTabElement.querySelector('.rc-filters__menu');
+    const iconArrow = filterTabElement.querySelector('.header-content__icon__arrow');
 
     if (isVisible) {
         if (filterTabElement.querySelector('.rc-filters__menu')) {
             try {
                 filterTabElement.removeChild(menu);
+                iconArrow.style.transform = 'rotate(0)';
             } catch (e) {}
         }
     } else {
         handleCloseAllMenus(event);
         filterTabElement.appendChild(menu);
+        iconArrow.style.transform = 'rotate(180deg)';
     }
 }
 
@@ -109,7 +114,7 @@ headerMenu.addEventListener('click', () => {
         <header>
             <div class="header-container content-border">
                 <div class="horizontal gap-3">
-                    <div class="burger-menu_inside">
+                    <div class="burger-menu_inside button">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18.3 5.7107C17.91 5.3207 17.28 5.3207 16.89 5.7107L12 10.5907L7.10997 5.7007C6.71997 5.3107 6.08997 5.3107 5.69997 5.7007C5.30997 6.0907 5.30997 6.7207 5.69997 7.1107L10.59 12.0007L5.69997 16.8907C5.30997 17.2807 5.30997 17.9107 5.69997 18.3007C6.08997 18.6907 6.71997 18.6907 7.10997 18.3007L12 13.4107L16.89 18.3007C17.28 18.6907 17.91 18.6907 18.3 18.3007C18.69 17.9107 18.69 17.2807 18.3 16.8907L13.41 12.0007L18.3 7.1107C18.68 6.7307 18.68 6.0907 18.3 5.7107Z" fill="#323232"/>
                         </svg>
@@ -137,11 +142,11 @@ headerMenu.addEventListener('click', () => {
                         </div>
 
                         <div class="header-contacts__phone">
-                            <p class="title__extra-medium">
+                            <p class="title__extra-medium__bold">
                                 +7 912 992 53 84
                             </p>
 
-                            <p class="button title__link title__small title__green">
+                            <p class="button title__link title__extra-medium__bold title__green">
                                 Заказать звонок
                             </p>
                         </div>
@@ -159,10 +164,10 @@ headerMenu.addEventListener('click', () => {
                     </svg>
 
                     <div class="footer__container__phone__content">
-                        <p class="title__medium">
+                        <p class="title__normal-medium title__green">
                             +7 912 992 53 84
                         </p>
-                        <p class="title__small title__gray">
+                        <p class="title__extra-medium title__gray">
                             Пн-Пт 09:00-18:00
                         </p>
                     </div>
@@ -171,33 +176,33 @@ headerMenu.addEventListener('click', () => {
     
             <div class="footer__container__col">
                 <div class="footer__container__col__menu">
-                    <p class="title__medium">Купить</p>
+                    <p class="title__extra-medium title__gray">Купить</p>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         Каталог квартир
                     </a>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         Каталог новостроек
                     </a>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         Вторичное жильё
                     </a>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         Застройщики
                     </a>
                 </div>
     
                 <div class="footer__container__col__menu">
-                    <p class="title__medium">Ипотека</p>
+                    <p class="title__extra-medium title__gray">Ипотека</p>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         Список банков
                     </a>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         Рефинансирование
                     </a>
                 </div>
@@ -205,29 +210,29 @@ headerMenu.addEventListener('click', () => {
     
             <div class="footer__container__col">
                 <div class="footer__container__col__menu">
-                    <p class="title__medium">Калькуляторы</p>
+                    <p class="title__extra-medium title__gray">Калькуляторы</p>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         Сумма накоплений
                     </a>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         Выгода от рефинансирования
                     </a>
                 </div>
     
                 <div class="footer__container__col__menu">
-                    <p class="title__medium">Военнослужащим</p>
+                    <p class="title__extra-medium title__gray">Военнослужащим</p>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         База знаний
                     </a>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         Вопросы и ответы
                     </a>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         Акции
                     </a>
                 </div>
@@ -235,29 +240,29 @@ headerMenu.addEventListener('click', () => {
     
             <div class="footer__container__col">
                 <div class="footer__container__col__menu">
-                    <p class="title__medium">О компании</p>
+                    <p class="title__extra-medium title__gray">О компании</p>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         Контакты
                     </a>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         О нас
                     </a>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         Новости
                     </a>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         Наша команда
                     </a>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         Отзывы
                     </a>
     
-                    <a class="title__link title__gray title__light" href="#">
+                    <a class="title__link title__black title__light" href="#">
                         Гарантии
                     </a>
                 </div>

@@ -49,7 +49,7 @@ function createNewCard(cardId) {
                     </div>
                 </div>
     
-                <div class="swiper-pagination-new-buildings swiper-pagination ${cardId}-new-buildings-pagination"></div>
+                <div id="${cardId}-new-buildings-pagination" class="swiper-pagination-new-buildings swiper-pagination ${cardId}-new-buildings-pagination"></div>
             </div>
         </div>
 
@@ -103,7 +103,7 @@ function createNewCard(cardId) {
 
         // If we need pagination
         pagination: {
-            el: `.${cardId}-new-buildings-pagination`,
+            el: `#${cardId}-new-buildings-pagination`,
         },
     });
 }
@@ -151,19 +151,27 @@ if (swiperContainer && swiperContainer.length && WINDOW_WIDTH > TOUCH_SCREEN) {
 }
 
 window.addEventListener('reset', () => {
-    const buildingsPagination = document.querySelector('.swiper-pagination-new-buildings');
+    const buildingsPaginations = document.querySelectorAll('.swiper-pagination-new-buildings');
 
     if (document.body.clientWidth < TOUCH_SCREEN) {
-        buildingsPagination.classList.remove('swiper-pagination');
+        buildingsPaginations.forEach((buildingsPagination) => {
+            buildingsPagination.classList.remove('swiper-pagination');
+        });
     } else {
-        buildingsPagination.classList.add('swiper-pagination');
+        buildingsPaginations.forEach((buildingsPagination) => {
+            buildingsPagination.classList.add('swiper-pagination');
+        });
     }
 });
 
-const buildingsPagination = document.querySelector('.swiper-pagination-new-buildings');
+const buildingsPaginations = document.querySelectorAll('.swiper-pagination-new-buildings');
 
 if (document.body.clientWidth < TOUCH_SCREEN) {
-    buildingsPagination.classList.remove('swiper-pagination');
+    buildingsPaginations.forEach((buildingsPagination) => {
+        buildingsPagination.classList.remove('swiper-pagination');
+    });
 } else {
-    buildingsPagination.classList.add('swiper-pagination');
+    buildingsPaginations.forEach((buildingsPagination) => {
+        buildingsPagination.classList.add('swiper-pagination');
+    });
 }

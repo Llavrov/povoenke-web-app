@@ -97,7 +97,11 @@ function createMortgageRow(mortgageData) {
                             ${mortgageHeaders[index]}
                         </p>
     
-                        ${infoIcon}
+                        ${(index > 0 && index < info.length) ? (
+                            `<div class="apartment-mortgage__table__info__icon info__icon__standard">
+                                ${infoIcon}
+                            </div>`
+                        ) : ''}
                     </div>
                     
                     <div class="">
@@ -106,7 +110,7 @@ function createMortgageRow(mortgageData) {
                         </p>
                         
                         <p class="title__small title__gray">
-                            430000p
+                            4 320 000
                         </p>
                     </div>
                 </div>
@@ -175,53 +179,60 @@ const INFO_ICON_OPTIONS = [
 ];
 
 INFO_ICON_OPTIONS.forEach(({selector, description, title}) => {
-    const infoTabElement = document.querySelector(selector);
+    const infoTabElements = document.querySelectorAll(selector);
 
-    infoTabElement.addEventListener('click', () => {
-        INFO_ICON_OPTIONS.forEach(({selector, description, title}) => {
-            const infoIconTabElement = document.querySelector(selector);
-            const infoMenu = infoIconTabElement.querySelector('.apartment-info__menu');
+    infoTabElements.forEach((infoTabElement) => {
+        infoTabElement.addEventListener('click', () => {
+            INFO_ICON_OPTIONS.forEach(({selector}) => {
+                const infoIconTabElements = document.querySelectorAll(selector);
+                infoIconTabElements.forEach((infoIconTabElement) => {
+                    const infoMenu = infoIconTabElement.querySelector('.apartment-info__menu');
 
-            if (infoMenu) {
-                try {
-                    infoIconTabElement.removeChild(infoMenu);
-                } catch (e) {}
-            }
-        });
+                    if (infoMenu) {
+                        try {
+                            infoIconTabElement.removeChild(infoMenu);
+                        } catch (e) {}
+                    }
+                })
+            });
 
-        const menu = document.createElement('div');
-        const titleEl = document.createElement('p');
-        const descriptionEl = document.createElement('p');
+            const menu = document.createElement('div');
+            const titleEl = document.createElement('p');
+            const descriptionEl = document.createElement('p');
 
-        titleEl.className = 'title_small';
-        titleEl.innerHTML = title;
+            titleEl.className = 'title__light';
+            titleEl.innerHTML = title;
 
-        descriptionEl.classList.add('title_small');
-        descriptionEl.classList.add('title_gray');
-        descriptionEl.innerHTML = description;
-        descriptionEl.style.color = 'rgba(20, 51, 82, 0.65)';
+            descriptionEl.classList.add('title__small');
+            descriptionEl.classList.add('title__gray');
+            descriptionEl.innerHTML = description;
+            descriptionEl.style.color = 'rgba(20, 51, 82, 0.65)';
 
-        menu.className = 'apartment-info__menu';
-        menu.appendChild(titleEl);
-        menu.appendChild(descriptionEl);
+            menu.className = 'apartment-info__menu';
+            menu.appendChild(titleEl);
+            menu.appendChild(descriptionEl);
 
-        infoTabElement.appendChild(menu);
+            infoTabElement.appendChild(menu);
+        })
     })
 })
 
 function handleCloseAllMenus(event) {
-    INFO_ICON_OPTIONS.map(({selector}) => {
-        const infoTabElement = document.querySelector(selector);
+    INFO_ICON_OPTIONS.forEach(({selector}) => {
+        const infoIconTabElements = document.querySelectorAll(selector);
 
-        if (infoTabElement && !parentsNodesContainClass(event.target, selector)) {
-            const menu = infoTabElement.querySelector('.apartment-info__menu');
-            menu && infoTabElement.removeChild(menu);
-        }
+        infoIconTabElements.forEach((infoTabElement) => {
+            if (infoTabElement && !parentsNodesContainClass(event.target, selector)) {
+                const menu = infoTabElement.querySelector('.apartment-info__menu');
+
+                menu && infoTabElement.removeChild(menu);
+            }
+        })
     });
 }
 
 window.addEventListener('click', (event) => {
-    if (!parentsNodesContainClass(event.target, 'apartment-mortgage__table__column')) {
+    if (!parentsNodesContainClass(event.target, 'mobile-header__container') && !parentsNodesContainClass(event.target, 'apartment-mortgage__table__column')) {
         handleCloseAllMenus(event);
     }
 });

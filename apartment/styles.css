@@ -674,6 +674,11 @@ td:not(:first-child, :last-child) {
 
 /*  apartment-description__title  */
 
+
+.apartment-description__fast-info {
+    padding-bottom: 4px;
+}
+
 .apartment-description__title {
     width: 100%;
     display: flex;
@@ -689,7 +694,13 @@ td:not(:first-child, :last-child) {
     gap: 12px;
 }
 
+.apartment-description__fast-info__container {
+    width: 100%;
+    max-width: 220px;
+}
+
 .apartment-description__fast-info__item {
+    cursor: pointer;
     width: 100%;
     max-width: 220px;
     padding: 10px 16px;
@@ -710,6 +721,10 @@ td:not(:first-child, :last-child) {
 .apartment-description__fast-info__item__content {
     display: flex;
     flex-direction: column;
+}
+
+.apartment-description__fast-info__item__content p:first-child {
+    margin-bottom: -6px;
 }
 
 .apartment-description__tab-bar {

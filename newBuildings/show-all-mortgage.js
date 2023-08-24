@@ -111,7 +111,7 @@ function createMortgageRow(mortgageData) {
                         </p>
                         
                         <p class="title__small title__gray">
-                            430000p
+                            4 320 000
                         </p>
                     </div>
                 </div>
@@ -233,7 +233,7 @@ function handleCloseAllMenus(event) {
 }
 
 window.addEventListener('click', (event) => {
-    if (!parentsNodesContainClass(event.target, 'mobile-header__container')) {
+    if (!parentsNodesContainClass(event.target, 'mobile-header__container') && !parentsNodesContainClass(event.target, 'building-mortgage__table__column')) {
         handleCloseAllMenus(event);
     }
 });

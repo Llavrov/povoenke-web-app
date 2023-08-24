@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="../common.css">
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
@@ -38,7 +39,7 @@
         <header>
             <div class="header-container content-border">
                 <div class="horizontal gap-3">
-                    <div class="burger-menu">
+                    <div class="burger-menu button">
                         <img src="../assets/burger-menu.svg" alt="burger menu">
                     </div>
 
@@ -54,36 +55,44 @@
                                 Недвижимость
                             </p>
 
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.64645 4.14645C2.84171 3.95118 3.15829 3.95118 3.35355 4.14645L6 6.79289L8.64645 4.14645C8.84171 3.95118 9.15829 3.95118 9.35355 4.14645C9.54882 4.34171 9.54882 4.65829 9.35355 4.85355L6.35355 7.85355C6.15829 8.04882 5.84171 8.04882 5.64645 7.85355L2.64645 4.85355C2.45118 4.65829 2.45118 4.34171 2.64645 4.14645Z" fill="black"/>
-                            </svg>
+                            <div class="header-content__icon__arrow">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.64645 4.14645C2.84171 3.95118 3.15829 3.95118 3.35355 4.14645L6 6.79289L8.64645 4.14645C8.84171 3.95118 9.15829 3.95118 9.35355 4.14645C9.54882 4.34171 9.54882 4.65829 9.35355 4.85355L6.35355 7.85355C6.15829 8.04882 5.84171 8.04882 5.64645 7.85355L2.64645 4.85355C2.45118 4.65829 2.45118 4.34171 2.64645 4.14645Z" fill="black"/>
+                                </svg>
+                            </div>
                         </li>
                         <li class="title__light header-nav__tab header-nav__mortgage button">
                             <p class="title__light">
                                 Ипотека
                             </p>
 
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.64645 4.14645C2.84171 3.95118 3.15829 3.95118 3.35355 4.14645L6 6.79289L8.64645 4.14645C8.84171 3.95118 9.15829 3.95118 9.35355 4.14645C9.54882 4.34171 9.54882 4.65829 9.35355 4.85355L6.35355 7.85355C6.15829 8.04882 5.84171 8.04882 5.64645 7.85355L2.64645 4.85355C2.45118 4.65829 2.45118 4.34171 2.64645 4.14645Z" fill="black"/>
-                            </svg>
+                            <div class="header-content__icon__arrow">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.64645 4.14645C2.84171 3.95118 3.15829 3.95118 3.35355 4.14645L6 6.79289L8.64645 4.14645C8.84171 3.95118 9.15829 3.95118 9.35355 4.14645C9.54882 4.34171 9.54882 4.65829 9.35355 4.85355L6.35355 7.85355C6.15829 8.04882 5.84171 8.04882 5.64645 7.85355L2.64645 4.85355C2.45118 4.65829 2.45118 4.34171 2.64645 4.14645Z" fill="black"/>
+                                </svg>
+                            </div>
                         </li>
                         <li class="title__light header-nav__tab header-nav__calc button">
                             <p class="title__light">
-                                Калкуляторы
+                                Калькуляторы
                             </p>
 
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.64645 4.14645C2.84171 3.95118 3.15829 3.95118 3.35355 4.14645L6 6.79289L8.64645 4.14645C8.84171 3.95118 9.15829 3.95118 9.35355 4.14645C9.54882 4.34171 9.54882 4.65829 9.35355 4.85355L6.35355 7.85355C6.15829 8.04882 5.84171 8.04882 5.64645 7.85355L2.64645 4.85355C2.45118 4.65829 2.45118 4.34171 2.64645 4.14645Z" fill="black"/>
-                            </svg>
+                            <div class="header-content__icon__arrow">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.64645 4.14645C2.84171 3.95118 3.15829 3.95118 3.35355 4.14645L6 6.79289L8.64645 4.14645C8.84171 3.95118 9.15829 3.95118 9.35355 4.14645C9.54882 4.34171 9.54882 4.65829 9.35355 4.85355L6.35355 7.85355C6.15829 8.04882 5.84171 8.04882 5.64645 7.85355L2.64645 4.85355C2.45118 4.65829 2.45118 4.34171 2.64645 4.14645Z" fill="black"/>
+                                </svg>
+                            </div>
                         </li>
                         <li class="title__light header-nav__tab header-nav__army button">
                             <p class="title__light">
                                 Военнослужащим
                             </p>
 
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.64645 4.14645C2.84171 3.95118 3.15829 3.95118 3.35355 4.14645L6 6.79289L8.64645 4.14645C8.84171 3.95118 9.15829 3.95118 9.35355 4.14645C9.54882 4.34171 9.54882 4.65829 9.35355 4.85355L6.35355 7.85355C6.15829 8.04882 5.84171 8.04882 5.64645 7.85355L2.64645 4.85355C2.45118 4.65829 2.45118 4.34171 2.64645 4.14645Z" fill="black"/>
-                            </svg>
+                            <div class="header-content__icon__arrow">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.64645 4.14645C2.84171 3.95118 3.15829 3.95118 3.35355 4.14645L6 6.79289L8.64645 4.14645C8.84171 3.95118 9.15829 3.95118 9.35355 4.14645C9.54882 4.34171 9.54882 4.65829 9.35355 4.85355L6.35355 7.85355C6.15829 8.04882 5.84171 8.04882 5.64645 7.85355L2.64645 4.85355C2.45118 4.65829 2.45118 4.34171 2.64645 4.14645Z" fill="black"/>
+                                </svg>
+                            </div>
                         </li>
                     </ul>
 
@@ -103,11 +112,11 @@
                         </div>
 
                         <div class="header-contacts__phone">
-                            <p class="title__extra-medium">
+                            <p class="title__extra-medium__bold">
                                 +7 912 992 53 84
                             </p>
 
-                            <p class="button title__link title__small title__green">
+                            <p class="button title__link title__small__bold title__green">
                                 Заказать звонок
                             </p>
                         </div>
@@ -548,13 +557,16 @@
                         </div>
 
                         <p class="title__light title__gray footer__ooo">
-                            © 2022 Общество с ограниченной ответственностью «поВоенке» Москва, Хорошёвское шоссе, 38к1, 5 этаж, офис 521, ОГРН 5147746388543 ИНН 7725849789. Политика конфиденциальности.
+                            © 2022 Общество с ограниченной ответственностью «поВоенке» Москва, Хорошёвское шоссе, 38к1, 5 этаж, офис 521, ОГРН 5147746388543 ИНН 7725849789.
+                            <a href="#" class="title__link title__gray">
+                                Политика конфиденциальности.
+                            </a>
                         </p>
                     </div>
 
                     <div class="footer__container__col">
                         <div class="footer__container__col__menu">
-                            <p class="title__medium">Купить</p>
+                            <p class="title__extra-medium__bold">Купить</p>
 
                             <a class="title__link title__gray title__light" href="#">
                                 Каталог квартир
@@ -574,7 +586,7 @@
                         </div>
 
                         <div class="footer__container__col__menu">
-                            <p class="title__medium">Ипотека</p>
+                            <p class="title__extra-medium__bold">Ипотека</p>
 
                             <a class="title__link title__gray title__light" href="#">
                                 Список банков
@@ -588,7 +600,7 @@
 
                     <div class="footer__container__col">
                         <div class="footer__container__col__menu">
-                            <p class="title__medium">Калькуляторы</p>
+                            <p class="title__extra-medium__bold">Калькуляторы</p>
 
                             <a class="title__link title__gray title__light" href="#">
                                 Сумма накоплений
@@ -600,7 +612,7 @@
                         </div>
 
                         <div class="footer__container__col__menu">
-                            <p class="title__medium">Военнослужащим</p>
+                            <p class="title__extra-medium__bold">Военнослужащим</p>
 
                             <a class="title__link title__gray title__light" href="#">
                                 База знаний
@@ -618,7 +630,7 @@
 
                     <div class="footer__container__col">
                         <div class="footer__container__col__menu">
-                            <p class="title__medium">О компании</p>
+                            <p class="title__extra-medium__bold">О компании</p>
 
                             <a class="title__link title__gray title__light" href="#">
                                 Контакты
@@ -648,7 +660,10 @@
 
                     <div class="footer__ooo__mobile">
                         <p class="title__light title__gray">
-                            © 2022 Общество с ограниченной ответственностью «поВоенке» Москва, Хорошёвское шоссе, 38к1, 5 этаж, офис 521, ОГРН 5147746388543 ИНН 7725849789. Политика конфиденциальности.
+                            © 2022 Общество с ограниченной ответственностью «поВоенке» Москва, Хорошёвское шоссе, 38к1, 5 этаж, офис 521, ОГРН 5147746388543 ИНН 7725849789.
+                            <a href="#" class="title__link title__gray">
+                                Политика конфиденциальности.
+                            </a>
                         </p>
                     </div>
                 </div>
