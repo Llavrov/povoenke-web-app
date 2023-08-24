@@ -1,6 +1,6 @@
 const BUILDING_PARAGRAPH_BUTTON = '.paragraph__show-all';
 const BUILDING_PARAGRAPH = '.building-description__paragraph__content';
-const HEIGHT_OF_PARAGRAPH = '120px';
+const HEIGHT_OF_PARAGRAPH = '70px';
 
 const paragraphsContainer = document.querySelectorAll('.building-description__paragraph');
 

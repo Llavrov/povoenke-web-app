@@ -12,7 +12,8 @@ const container = document.querySelector(RC_CARDS_MIN_CONTENT_CLASS);
 
 function createNewCard(cardId) {
     const card = document.createElement('div');
-    card.className = RC_CARDS_MIN_CLASS;
+    card.classList.add(RC_CARDS_MIN_CLASS);
+    card.classList.add('swiper-slide');
     card.innerHTML = `
         <div class="rc-card__image">
             <div class="rc-card__image__logo">
@@ -173,5 +174,34 @@ if (document.body.clientWidth < TOUCH_SCREEN) {
 } else {
     buildingsPaginations.forEach((buildingsPagination) => {
         buildingsPagination.classList.add('swiper-pagination');
+    });
+}
+
+
+// Свайпер для контейнера с карточками
+
+
+if (document.body.clientWidth > TOUCH_SCREEN) {
+    const minSwiper = new Swiper(`.rc-cards-min-swiper`, {
+        // Optional parameters
+        direction: 'horizontal',
+        slidesPerView: 3,
+
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+    // Добавляем обработчики для навигационных кнопок
+    const nextButton = document.querySelector(".swiper-button-next");
+
+    nextButton.addEventListener("click", function () {
+        const slidesToStopBeforeEnd = 6; // Сколько слайдов остановить перед концом
+        const currentIndex = minSwiper.activeIndex;
+
+        if (minSwiper.slides.length > slidesToStopBeforeEnd && minSwiper.slides.length - currentIndex < slidesToStopBeforeEnd) {
+            minSwiper.allowSlideNext = false;
+        }
     });
 }

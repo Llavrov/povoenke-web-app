@@ -831,7 +831,7 @@ td:not(:first-child, :last-child) {
 
 
 .building-description__paragraph__content {
-    max-height: 120px;
+    max-height: 70px;
     overflow: hidden;
 }
 
@@ -1020,6 +1020,41 @@ td:not(:first-child, :last-child) {
     background: rgba(55, 110, 164, 0.06);
     padding-bottom: 64px;
     box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.rc-cards-min-swiper__navigation {
+    width: 92px;
+    height: 40px;
+    position: relative;
+    display: flex;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: 40px !important;
+    height: 40px !important;
+    background: white;
+    border-radius: 20px;
+}
+
+.swiper-button-prev {
+    left: 0 !important;
+}
+
+.swiper-button-next {
+    right: 0 !important;
+}
+
+.swiper-button-next svg,
+.swiper-button-prev svg {
+    width: 5px !important;
+    height: 10px !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    content: none !important;
 }
 
 .building-nearest-complex-content {
@@ -1029,7 +1064,6 @@ td:not(:first-child, :last-child) {
 }
 
 .building-nearest-complex__cards {
-    overflow-x: scroll;
     padding: 0 calc((100% - 1131px) / 2);
 }
 

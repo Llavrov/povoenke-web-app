@@ -1,6 +1,6 @@
 const APARTMENT_PARAGRAPH_BUTTON = '.paragraph__show-all';
 const APARTMENT_PARAGRAPH = '.apartment-description__paragraph__content';
-const HEIGHT_OF_PARAGRAPH = '120px';
+const HEIGHT_OF_PARAGRAPH = '70px';
 
 const paragraphsContainer = document.querySelectorAll('.apartment-description__paragraph');
 

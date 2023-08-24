@@ -255,3 +255,32 @@ if (swiperContainer && swiperContainer.length && WINDOW_WIDTH > TOUCH_SCREEN) {
         container.appendChild(hoverSectionContainer);
     })
 }
+
+
+// Свайпер для контейнера с карточками
+
+
+if (document.body.clientWidth > TOUCH_SCREEN) {
+    const minSwiper = new Swiper(`.rc-cards-min-swiper`, {
+        // Optional parameters
+        direction: 'horizontal',
+        slidesPerView: 3,
+
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+    // Добавляем обработчики для навигационных кнопок
+    const nextButton = document.querySelector(".swiper-button-next");
+
+    nextButton.addEventListener("click", function () {
+        const slidesToStopBeforeEnd = 6; // Сколько слайдов остановить перед концом
+        const currentIndex = minSwiper.activeIndex;
+
+        if (minSwiper.slides.length > slidesToStopBeforeEnd && minSwiper.slides.length - currentIndex < slidesToStopBeforeEnd) {
+            minSwiper.allowSlideNext = false;
+        }
+    });
+}
