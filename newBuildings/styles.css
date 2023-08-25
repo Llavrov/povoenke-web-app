@@ -1091,3 +1091,13 @@ td:not(:first-child, :last-child) {
         gap: 20px;
     }
 }
+
+@media (max-width: 660px) {
+    .rc-cards-min-swiper__navigation {
+        display: none;
+    }
+
+    .rc-cards-min-container__content {
+        overflow-y: scroll;
+    }
+}
