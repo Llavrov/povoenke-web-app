@@ -346,6 +346,7 @@
     display: flex;
     flex-direction: column;
     gap: 11px;
+    position: relative;
 }
 
 .building-info__more-info__item p:first-child {
@@ -370,6 +371,10 @@
 
     .building-info__title__tag {
         display: none;
+    }
+
+    .building-info__more-info__row .building-info__more-info__item {
+        position: relative;
     }
 
     .building-info__more-info__row .building-info__more-info__item:nth-child(2) {

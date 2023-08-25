@@ -801,6 +801,54 @@ footer {
 }
 
 
+/*  Модалка для описания ЖК или Квартиры  */
+
+.options-modal {
+    width: 213px;
+    max-height: 245px;
+
+    position: absolute;
+    z-index: 20;
+    top: 66px;
+    background: white;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    padding-bottom: 20px;
+}
+
+.options-modal__header {
+    width: 100%;
+    padding: 6px 20px 6px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.options-modal__container {
+    overflow-y: scroll;
+    max-height: 200px;
+    overscroll-behavior: contain;
+}
+
+.options-modal__option {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 20px;
+    box-sizing: border-box;
+}
+
+.options-modal__option:hover {
+    background: #ECF0F1;
+}
+
+
 /*  Apartments menu  */
 
 
