@@ -202,6 +202,8 @@ if (document.body.clientWidth > TOUCH_SCREEN) {
 
         if (minSwiper.slides.length > slidesToStopBeforeEnd && minSwiper.slides.length - currentIndex < slidesToStopBeforeEnd) {
             minSwiper.allowSlideNext = false;
+        } else {
+            minSwiper.allowSlideNext = true;
         }
     });
 }
