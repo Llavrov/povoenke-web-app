@@ -868,6 +868,8 @@ td:not(:first-child, :last-child) {
     justify-content: center;
     gap: 40px;
     background: rgba(55, 110, 164, 0.06);
+    overflow-x: hidden;
+    position: relative;
 }
 
 .apartment-nearest-complex-content {
@@ -880,7 +882,7 @@ td:not(:first-child, :last-child) {
 
 .rc-cards-min-swiper__navigation {
     width: 92px;
-    height: 40px;
+    height: 44px;
     position: relative;
     display: flex;
 }
@@ -913,7 +915,6 @@ td:not(:first-child, :last-child) {
 }
 
 .apartment-nearest-complex__cards {
-    overflow-x: scroll;
     padding: 0 calc((100% - 1131px) / 2);
 }
 
@@ -932,7 +933,7 @@ td:not(:first-child, :last-child) {
     max-height: 240px;
 }
 
-.swiper-slide {
+.rc-apartment__image .swiper-slide {
     max-height: 240px;
 }
 
@@ -1111,6 +1112,8 @@ td:not(:first-child, :last-child) {
 
 @media (max-width: 780px) {
     .apartment-nearest-complex-container {
+        overflow-x: hidden;
+        position: relative;
         height: 550px;
         gap: 20px;
     }

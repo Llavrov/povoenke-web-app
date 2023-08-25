@@ -53,11 +53,13 @@ function parentsNodesContainClass(node, className) {
 function handleCloseAllMenus(event) {
     FILTER_OPTIONS.map(({selector}) => {
         const filterTabElement = document.querySelector(selector);
+        const icon = filterTabElement && filterTabElement.querySelectorAll('svg');
 
         if (filterTabElement && !parentsNodesContainClass(event.target, selector)) {
             const menu = filterTabElement.querySelector('.rc-filters__menu');
             menu && filterTabElement.removeChild(menu);
             filterTabElement.style.border = '1px solid transparent';
+            icon[1].style.transform = 'rotate(0deg)';
         }
     });
 }
@@ -102,6 +104,7 @@ buttonAllFilters && buttonAllFilters.addEventListener('click', () => {
 
 function handleOpenMenuFilter(event, selector, menu, title) {
     const filterTabElement = document.querySelector(selector);
+    const icon = filterTabElement.querySelectorAll('svg');
 
     const isVisible = filterTabElement.querySelector('.rc-filters__menu');
     const isOption = event.target.classList.contains('rc-filters__option');
@@ -111,6 +114,7 @@ function handleOpenMenuFilter(event, selector, menu, title) {
             try {
                 filterTabElement.removeChild(menu);
                 filterTabElement.style.border = '1px solid transparent';
+                icon[1].style.transform = 'rotate(0deg)';
             } catch (e) {}
         }
 
@@ -127,6 +131,7 @@ function handleOpenMenuFilter(event, selector, menu, title) {
         filterTabElement.appendChild(menu);
 
         filterTabElement.style.border = '1px solid rgba(0, 155, 71, 1)';
+        icon[1].style.transform = 'rotate(180deg)';
     }
 }
 

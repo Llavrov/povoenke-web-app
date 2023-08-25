@@ -12,7 +12,8 @@ const container = document.querySelector(RC_CARDS_MIN_CONTENT_CLASS);
 
 function createNewCard(cardId) {
     const card = document.createElement('div');
-    card.className = RC_CARDS_MIN_CLASS;
+    card.classList.add(RC_CARDS_MIN_CLASS);
+    card.classList.add('swiper-slide');
     card.innerHTML = `
         <div class="rc-apartment__image">
             <!-- Slider main container  -->
@@ -259,8 +260,8 @@ if (swiperContainer && swiperContainer.length && WINDOW_WIDTH > TOUCH_SCREEN) {
 
 // Свайпер для контейнера с карточками
 
-
 if (document.body.clientWidth > TOUCH_SCREEN) {
+    console.log('work')
     const minSwiper = new Swiper(`.rc-cards-min-swiper`, {
         // Optional parameters
         direction: 'horizontal',
