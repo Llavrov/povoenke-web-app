@@ -63,6 +63,13 @@ p, h1, h2, h3 {
     scrollbar-width: none; /* Firefox */
 }
 
+@media (max-width: 660px) {
+    .swiper {
+        width: 360px;
+        height: 260px;
+    }
+}
+
 
 /*  Titles  */
 
@@ -104,6 +111,13 @@ p, h1, h2, h3 {
 
 .title__normal-medium {
     font-family: TTCommonsMedium, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.title__normal-medium__regular {
+    font-family: TTCommonsRegular, sans-serif;
     font-size: 20px;
     font-weight: 500;
     line-height: 22px;
@@ -297,7 +311,7 @@ header {
 .header-contacts {
     display: flex;
     width: 100%;
-    max-width: 236px;
+    max-width: 246px;
     justify-content: space-between;
     align-items: center;
 }
@@ -307,12 +321,22 @@ header {
     gap: 12px;
 }
 
+.header-contacts__icons__like-mobile,
+.header-contacts__icons__search-mobile {
+    display: none;
+}
+
 .header-contacts__phone .title__small__bold {
     text-align: right;
+    line-height: 14px;
 }
 
 .header-contacts__phone .title__extra-medium {
     margin-bottom: -6px;
+}
+
+.header-contacts__phone .title__extra-medium__bold {
+    line-height: 22px;
 }
 
 .header-navigation {
@@ -372,6 +396,10 @@ header {
 }
 
 @media (max-width: 660px) {
+    header {
+        height: 55px;
+    }
+
     .apartment-price {
         display: flex;
     }
@@ -389,6 +417,21 @@ header {
     .logotype img {
         width: 140px;
         height: 35px;
+    }
+
+    .header-contacts__icons {
+        flex-direction: row-reverse;
+        gap: 25px;
+    }
+
+    .header-contacts__icons__like,
+    .header-contacts__icons__search {
+        display: none;
+    }
+
+    .header-contacts__icons__like-mobile,
+    .header-contacts__icons__search-mobile {
+        display: flex;
     }
 }
 
@@ -446,8 +489,9 @@ footer {
 }
 
 .footer__contact-form {
+    height: 97px;
     display: flex;
-    padding: 22px 20px;
+    padding: 26px 20px 22px;
     box-sizing: border-box;
     justify-content: space-between;
 }
@@ -582,6 +626,10 @@ footer {
         display: block;
     }
 
+    .footer__container__phone {
+        gap: 16px;
+    }
+
     .footer__contact-form__promo .title__medium__xx {
         font-size: 22px;
     }
@@ -609,6 +657,14 @@ footer {
     .footer__container__col__contacts .social_network,
     .footer__container__col__contacts .social_networks {
         display: none;
+    }
+
+    .footer__container__col {
+        gap: 30px;
+    }
+
+    .footer__container__col__menu .title__normal-medium__regular {
+        line-height: 28px;
     }
 
     .footer__ooo__mobile .social_networks {
@@ -653,6 +709,10 @@ footer {
 
 .ml-1 {
     margin-left: 4px;
+}
+
+.ml-2 {
+    margin-left: 8px;
 }
 
 
@@ -886,7 +946,7 @@ footer {
     flex-direction: column;
     align-items: center;
 
-    padding: 45px 0 56px;
+    padding: 48px 0 55px;
 }
 
 .rc-filters__content {
@@ -931,11 +991,32 @@ footer {
     user-select: none;
 }
 
+.rc-filters__content__filters__tab {
+    border: 0 solid transparent;
+}
+
+.rc-filters__content__filters__tab .button__secondary {
+    height: 48px;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid transparent;
+}
+
 .rc-filters__count-of-rooms .button__secondary {
+    padding: 14px 26px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 56px;
+    height: 48px;
+    border-radius: 10px;
+}
+
+.rc-filters__count-of-rooms .button__secondary:not(:first-child) {
+    border-radius: 10px;
+    height: 48px;
+    width: 48px;
+    min-width: 48px;
+    padding: 0;
 }
 
 .rc-filters__city,
@@ -943,14 +1024,12 @@ footer {
     width: 100%;
     max-width: 228px;
     justify-content: space-between;
-    border: 1px solid transparent;
 }
 
 .rc-filters__banks {
     width: 100%;
     max-width: 245px;
     justify-content: space-between;
-    border: 1px solid transparent;
 }
 
 .rc-filters__price,
@@ -958,7 +1037,6 @@ footer {
     width: 100%;
     max-width: 219px;
     justify-content: space-between;
-    border: 1px solid transparent;
 }
 
 .rc-filters__place,
@@ -967,12 +1045,12 @@ footer {
     width: 100%;
     max-width: 195px;
     justify-content: space-between;
-    border: 1px solid transparent;
 }
 
 .rc-filters__content__filters-additional {
     display: flex;
     justify-content: space-between;
+    padding-top: 4px;
 }
 
 .rc-filters__content__filters__additional .rc-filters__date,
@@ -983,11 +1061,11 @@ footer {
 .rc-filters__menu {
     position: absolute;
     z-index: 20;
-    top: 88px;
+    top: 82px;
     width: 100%;
     max-width: 240px;
     max-height: 200px;
-    margin-left: -20px;
+    margin-left: -14px;
     background: white;
     box-shadow: 0 14px 14px rgba(0, 0, 0, 0.05);
     overflow-y: scroll;
@@ -1045,6 +1123,11 @@ footer {
     .rc-filters__content .title__large {
         font-size: 34px;
         line-height: 34px;
+    }
+
+    .rc-filters__count-of-rooms .button__secondary:not(:first-child) {
+        width: 100%;
+        min-width: 48px;
     }
 }
 
