@@ -507,10 +507,21 @@ footer {
     height: 48px;
 }
 
+.footer__contact-form__input .contact-form__input input::placeholder,
+.footer__contact-form__input .contact-form__input input {
+    color: #173B5E59;
+}
+
 .footer__contact-form__input .contact-form__button {
     height: 48px;
     min-width: 170px !important;
     padding-top: 16px;
+}
+
+.footer__contact-form__promo {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }
 
 .footer__container {
@@ -518,7 +529,13 @@ footer {
     padding: 40px 20px 0;
     box-sizing: border-box;
     width: 100%;
-    gap: 5%;
+    gap: 7%;
+}
+
+.footer__container__navigation {
+    display: flex;
+    width: 65%;
+    gap: 10%;
 }
 
 .footer__container__col__contacts {
@@ -528,16 +545,37 @@ footer {
     gap: 16px;
 }
 
+.footer__container__col__contacts img {
+    width: 176px;
+    height: 44px;
+    object-fit: contain;
+}
+
 .footer__container__col {
-    flex: 1 20%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 35px;
+}
+
+.footer__container__col:nth-child(1) {
+    flex: 1 20%;
+}
+
+.footer__container__col:nth-child(2) {
+    flex: 1 30%;
+}
+
+.footer__container__col:nth-child(3) {
+    flex: 1 20%;
 }
 
 .footer__container__phone {
     display: flex;
     gap: 20px;
+}
+
+.footer__container__phone .social_networks {
+    margin-bottom: 0;
 }
 
 .social_network {
@@ -572,7 +610,16 @@ footer {
 .footer__container__col__menu {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 15px;
+}
+
+
+.footer__container__col__menu .title__extra-medium {
+    line-height: 26px;
+}
+
+.footer__container__col__menu .title__link {
+    line-height: 22px;
 }
 
 .footer__ooo__mobile {
@@ -599,7 +646,8 @@ footer {
         padding-bottom: 40px;
     }
 
-    .footer__container {
+    .footer__container,
+    .footer__container__navigation {
         flex-direction: column;
         gap: 30px;
     }
@@ -610,6 +658,7 @@ footer {
     }
 
     .footer__contact-form {
+        height: unset;
         gap: 20px;
         padding: 20px 0 70px;
     }
@@ -638,11 +687,12 @@ footer {
         max-width: 200px;
     }
 
+    .social_networks__title,
     .footer__container__phone .social_networks {
         display: none;
     }
 
-    .footer__container__phone__content .title__medium {
+    .footer__container__phone__content .title__extra-medium__bold {
         color: #009B47;
         font-family: TTCommonsRegular;
         font-size: 18px;
