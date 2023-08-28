@@ -7,34 +7,42 @@ const iconAllFilters = document.querySelector('.rc-filters__button__all-filters_
 const FILTER_OPTIONS = [
     {
         selector: '.rc-filters__content__filters__tab .rc-filters__builder',
+        menuTitle: 'Все корпуса',
         options: ['опция 1', 'опция 2', 'опция 3'],
     },
     {
         selector: '.rc-filters__content__filters__tab .rc-filters__corpus',
+        menuTitle: 'Все корпуса',
         options: ['опция 1', 'опция 2', 'опция 3'],
     },
     {
         selector: '.rc-filters__content__filters__tab .rc-filters__finishing',
+        menuTitle: 'Все корпуса',
         options: ['опция 1', 'опция 2', 'опция 3'],
     },
     {
         selector: '.rc-filters__content__filters__tab .rc-filters__banks',
+        menuTitle: 'Все корпуса',
         options: ['опция 1', 'опция 2', 'опция 3'],
     },
     {
         selector: '.rc-filters__content__filters__tab .rc-filters__city',
+        menuTitle: 'Все корпуса',
         options: ['опция 1', 'опция 2', 'опция 3'],
     },
     {
         selector: '.rc-filters__content__filters__tab .rc-filters__price',
+        menuTitle: 'Все корпуса',
         options: ['опция 1', 'опция 2', 'опция 3'],
     },
     {
         selector: '.rc-filters__content__filters__tab .rc-filters__place',
+        menuTitle: 'Все корпуса',
         options: ['опция 1', 'опция 2', 'опция 3'],
     },
     {
         selector: '.rc-filters__content__filters__tab .rc-filters__date',
+        menuTitle: 'Все корпуса',
         options: ['опция 1', 'опция 2', 'опция 3'],
     }
 ];
@@ -66,6 +74,7 @@ function handleCloseAllMenus(event) {
 
 
 // Показать все фильтры
+
 
 function handleSwitchShowAllFilters() {
     if (additionalFiltersContainer) {
@@ -136,7 +145,7 @@ function handleOpenMenuFilter(event, selector, menu, title) {
 }
 
 function handleSetMenusForAllFiltersTabs() {
-    FILTER_OPTIONS.map(({selector, options}) => {
+    FILTER_OPTIONS.map(({selector, options, menuTitle}) => {
         const filterTabElement = document.querySelector(selector);
         const filterTabElements = document.querySelectorAll(selector);
 
@@ -147,6 +156,9 @@ function handleSetMenusForAllFiltersTabs() {
 
         const menu = document.createElement('div');
         menu.className = 'rc-filters__menu';
+        menu.innerHTML = `
+            <p class="rc-filters__menu__title">${menuTitle}</p>
+        `;
 
         options.map((option) => {
             const optionElement = document.createElement('p');

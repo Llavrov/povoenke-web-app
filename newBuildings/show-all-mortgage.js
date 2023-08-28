@@ -105,8 +105,8 @@ function createMortgageRow(mortgageData) {
                         ) : ''}
                     </div>
                     
-                    <div class="">
-                        <p class="title__light">
+                    <div class="mobile-header__container__content">
+                        <p class="title__normal-medium">
                             ${info}
                         </p>
                         

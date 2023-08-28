@@ -25,7 +25,7 @@
 }
 
 .building-slider__content {
-    margin-top: 40px;
+    margin-top: 20px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -33,19 +33,19 @@
 
 .building-slider__wrapper {
     width: 100%;
-    max-width: 740px;
-    height: 360px;
+    max-width: 743px;
+    height: 355px;
     transition: 0.5s height;
-    border-radius: 28px;
+    border-radius: 30px;
     position: relative;
 }
 
 .building-slider {
     width: 100%;
-    max-width: 740px;
-    height: 360px;
+    max-width: 743px;
+    height: 355px;
     transition: 0.5s height;
-    border-radius: 28px;
+    border-radius: 30px;
     overflow: hidden;
     position: relative;
 }
@@ -53,8 +53,8 @@
 .new-buildings__image__rc {
     overflow: hidden;
     width: 100%;
-    max-width: 740px;
-    height: 360px;
+    max-width: 743px;
+    height: 355px;
     object-fit: cover;
     transition: 0.5s height;
 }
@@ -63,7 +63,7 @@
     overflow: hidden;
     width: 100%;
     max-width: 80px;
-    height: 80px;
+    height: 84px;
     object-fit: cover;
     transition: 0.5s height;
 
@@ -90,7 +90,7 @@
     top: 50%;
     width: 60px;
     height: 28px;
-    border-radius: 28px;
+    border-radius: 30px;
     transform: translateY(-50%);
     z-index: 10;
     cursor: pointer;
@@ -223,7 +223,7 @@
 .building-slider-container__modal {
     position: fixed;
     width: 100%;
-    max-width: 1131px;
+    max-width: 1200px;
     padding: 0 10px;
     box-sizing: border-box;
     top: 50%;
@@ -242,7 +242,7 @@
 .building-slider-container__modal .building-slider {
     width: 100%;
     position: relative;
-    max-width: 1131px;
+    max-width: 1200px;
     height: 90vh;
     margin: 0;
 }
@@ -250,7 +250,7 @@
 .new-buildings__image__modal__rc {
     overflow: hidden;
     width: 100%;
-    max-width: 1131px;
+    max-width: 1200px;
     height: 100%;
     object-fit: cover;
     transition: 0.5s height;
@@ -267,8 +267,9 @@
 
 
 .min-map {
+    border-radius: 20px;
     width: 360px;
-    height: 360px;
+    height: 355px;
     background: #F2F2F2;
 }
 
@@ -314,12 +315,12 @@
 
 .building-info {
     width: 100%;
-    max-width: 740px;
+    max-width: 743px;
     padding-top: 80px;
 }
 
 .building-info__title__container {
-    max-width: 740px;
+    max-width: 743px;
 }
 
 .building-info__title__tag {
@@ -331,7 +332,7 @@
 .building-info__more-info {
     display: flex;
     width: 100%;
-    max-width: 740px;
+    max-width: 743px;
     margin-top: 24px;
 }
 
@@ -455,7 +456,7 @@
 .building-object-type-container {
     display: flex;
     justify-content: start;
-    gap: 8px;
+    gap: 4px;
     width: 100%;
     margin-top: 60px;
 }
@@ -471,7 +472,7 @@
 .building-object-type__item__active {
     padding: 12px 28px;
     background: rgba(17, 34, 51, 0.06);
-    border-radius: 20px;
+    border-radius: 16px;
 }
 
 .building-object-type__item__active p {
@@ -490,7 +491,7 @@
 
 
 .building-apartments-container {
-    margin-top: 60px;
+    margin-top: 64px;
     margin-bottom: 96px;
     width: 100%;
 }
@@ -703,7 +704,7 @@
 
 .building-mortgage__table {
     margin: 0 -20px;
-    padding: 25px 0 0;
+    padding: 32px 0 0;
     position: relative;
     max-height: 400px;
     overflow: hidden;
@@ -729,7 +730,6 @@
 
 .building-mortgage__table__column {
     display: flex;
-    justify-content: center;
     gap: 8px;
 }
 
@@ -748,6 +748,10 @@ td:not(:first-child, :last-child) {
     border-right: 1px solid #ECF0F1;
 }
 
+.table-headers th {
+    padding: 0 16px;
+}
+
 .building-mortgage__table__body td {
     padding: 20px 16px;
 }
@@ -756,6 +760,11 @@ td:not(:first-child, :last-child) {
     width: 100%;
     justify-content: space-between;
     align-items: start;
+}
+
+.mobile-header__container__content .title__normal-medium {
+    font-size: 16px;
+    font-family: TTCommonsRegular;
 }
 
 .mobile-header__container__bank {
@@ -772,6 +781,10 @@ td:not(:first-child, :last-child) {
 }
 
 @media (max-width: 780px) {
+    .building-mortgage__table {
+        padding: 20px 0 0;
+    }
+
     .building-mortgage__table__body__bottom {
         display: none;
     }
@@ -781,8 +794,12 @@ td:not(:first-child, :last-child) {
         box-sizing: border-box;
     }
 
+    .building-description-container .building-description__tab-bar {
+        display: none;
+    }
+
     .building-mortgage-container {
-        margin: 0 0 28px;
+        margin: 0 0 36px;
     }
 
     td, th,
@@ -930,8 +947,7 @@ td:not(:first-child, :last-child) {
 
 @media (max-width: 780px) {
     .building-description__builder,
-    .building-description__fast-info,
-    .building-description__tab-bar {
+    .building-description__fast-info {
         display: none;
     }
 }
@@ -943,9 +959,9 @@ td:not(:first-child, :last-child) {
     display: flex;
     flex-direction: column;
     gap: 28px;
-    max-width: 740px;
+    max-width: 743px;
     width: 100%;
-    padding: 20px 0 80px;
+    padding: 16px 0 80px;
 }
 
 .building-description__paragraph__content {
@@ -1020,7 +1036,7 @@ td:not(:first-child, :last-child) {
 
 @media (max-width: 780px) {
     .building-geo-container {
-        margin: 0 0 28px;
+        margin: 20px 0 40px;
     }
 
     .building-geo__map {
@@ -1030,6 +1046,10 @@ td:not(:first-child, :last-child) {
     .building-geo__metro,
     .building-geo__address {
         gap: 12px;
+    }
+
+    .building-geo__address .title__extra-medium {
+        font-size: 16px;
     }
 
     .building-geo-content {
@@ -1108,8 +1128,9 @@ td:not(:first-child, :last-child) {
 
 @media (max-width: 780px) {
     .building-nearest-complex-container {
-        height: 550px;
+        height: 514px;
         gap: 20px;
+        padding-bottom: 0;
     }
 }
 
