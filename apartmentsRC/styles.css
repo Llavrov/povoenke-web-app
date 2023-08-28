@@ -12,7 +12,17 @@
     max-width: 1131px;
 }
 
+.content-border__light {
+    width: 100%;
+    max-width: 1131px;
+}
+
 @media (max-width: 1131px) {
+    .content-border__light {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
     .content-border {
         padding: 0 20px;
         box-sizing: border-box;

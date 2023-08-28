@@ -1206,6 +1206,10 @@ footer {
 }
 
 @media (max-width: 660px) {
+    .rc-filters {
+        padding-bottom: 20px;
+    }
+
     .rc-filters__content__filters {
         align-items: center;
         justify-content: start;
