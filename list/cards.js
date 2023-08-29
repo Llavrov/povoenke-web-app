@@ -5,6 +5,8 @@ const SWIPER_SLIDE_CLASS = '.swiper-slide';
 const RC_CARD_CLASS = '.rc-card';
 const RC_CARD_CONTENT_CLASS = '.rc-card__content';
 const RC_IMAGE_CLASS = '.rc-card__image__rc';
+const RC_LOGO_CLASS = '.rc-card__image__logo';
+const RC_LABEL_CLASS = '.rc-card__image__logo__content';
 
 const WINDOW_WIDTH = document.body.clientWidth;
 const TOUCH_SCREEN = 660;
@@ -22,6 +24,11 @@ function createNewCard(cardId) {
                     src="../assets/logo.png"
                     alt="residential complex description"
                 >
+                
+                <div class="rc-card__image__logo__content">
+                    <p class="title__light title__white no-whitespace">ГК Гранель</p>
+                    <p class="title__light title__gray no-whitespace">234 объекта</p>
+                </div>
             </div>
             <!-- Slider main container  -->
             <!-- Класс свайпера мы определяем уникальный, чтобы в последствии инициализировать его отдельно каждый  -->
@@ -55,7 +62,7 @@ function createNewCard(cardId) {
                     <p class="title__medium">
                         ЖК Новая Рига
                     </p>
-        
+
                     <div class="button">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20.0587 4.44659C17.9181 2.6224 14.7346 2.95052 12.7698 4.97783L12.0003 5.77078L11.2308 4.97783C9.26987 2.95052 6.08243 2.6224 3.94185 4.44659C1.48877 6.5403 1.35987 10.298 3.55514 12.5675L11.1136 20.3721C11.6019 20.876 12.3948 20.876 12.8831 20.3721L20.4415 12.5675C22.6407 10.298 22.5118 6.5403 20.0587 4.44659Z" fill="#2A547E" fill-opacity="0.13"/>
@@ -228,14 +235,18 @@ if (swiperContainer && swiperContainer.length && WINDOW_WIDTH > TOUCH_SCREEN) {
 // rc-card: При наведении на контент карточки rc-card - картинка уменьшается
 const listOfCards = document.querySelectorAll(RC_CARD_CLASS);
 
-listOfCards && listOfCards.forEach((card) => {
+WINDOW_WIDTH > TOUCH_SCREEN && listOfCards && listOfCards.forEach((card) => {
     const content = card.querySelector(RC_CARD_CONTENT_CLASS);
     const swiper = card.querySelector(SWIPER_CLASS);
     const images = card.querySelectorAll(RC_IMAGE_CLASS);
+    const rcLabel = card.querySelector(RC_LABEL_CLASS);
+    const rcLogo = card.querySelector(RC_LOGO_CLASS);
 
     content.addEventListener('mouseover', () => {
         if (WINDOW_WIDTH > TOUCH_SCREEN) {
             swiper.style.height = '200px';
+            rcLabel.style.display = 'flex';
+            rcLogo.classList.add('rc-card__image__logo__active')
             images.forEach((image) => {
                 image.style.height = '200px';
             });
@@ -244,6 +255,8 @@ listOfCards && listOfCards.forEach((card) => {
 
     content.addEventListener('mouseout', () => {
         swiper.style.height = '272px';
+        rcLabel.style.display = 'none';
+        rcLogo.classList.remove('rc-card__image__logo__active')
         images.forEach((image) => {
             image.style.height = '272px';
         })

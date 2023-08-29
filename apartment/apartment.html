@@ -486,33 +486,37 @@
                 </div>
             </div>
 
-            <div class="apartment-object-type-container content-border no-scrollbar">
-                <div class="button apartment-object-type__item apartment-object-type__item__active">
-                    <p class="title__light no-whitespace">
-                        Описание
-                    </p>
-                </div>
+            <div class="object-type-container">
+                <div class="apartment-object-type-container">
+                    <div class="apartment-object-type-content content-border no-scrollbar">
+                        <div class="button apartment-object-type__item apartment-object-type__item__active">
+                            <p class="title__light no-whitespace">
+                                Описание
+                            </p>
+                        </div>
 
-                <div class="button apartment-object-type__item">
-                    <p class="title__light no-whitespace">
-                        Ипотека
-                    </p>
-                </div>
+                        <div class="button apartment-object-type__item">
+                            <p class="title__light no-whitespace">
+                                Ипотека
+                            </p>
+                        </div>
 
-                <div class="button apartment-object-type__item">
-                    <p class="title__light no-whitespace">
-                        Инфраструктура
-                    </p>
-                </div>
+                        <div class="button apartment-object-type__item">
+                            <p class="title__light no-whitespace">
+                                Инфраструктура
+                            </p>
+                        </div>
 
-                <div class="button apartment-object-type__item">
-                    <p class="title__light no-whitespace">
-                        Похожие квартиры
-                    </p>
+                        <div class="button apartment-object-type__item">
+                            <p class="title__light no-whitespace">
+                                Похожие квартиры
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="apartment-description-container content-border">
+            <div id="apartment-about-container" class="apartment-description-container content-border">
                 <div class="apartment-description__title">
                     <p class="title__large__xs">
                         О комплексе
@@ -570,8 +574,8 @@
                 </div>
 
                 <div class="apartment-description__tab-bar">
-                    <div class="button apartment__tab-bar__item apartment__tab-bar__item__active">
-                        <p class="title__extra-medium no-whitespace apartment-tab__about-apartment">
+                    <div class="button apartment__tab-bar__item apartment__tab-bar__item__active apartment-tab__about-apartment">
+                        <p class="title__extra-medium no-whitespace">
                             О квартире
                         </p>
                     </div>
@@ -584,11 +588,22 @@
                 </div>
 
                 <div class="apartment-description__paragraphs apartment-description__details__paragraphs">
-                    <p class="title__light">
-                        Жилой район «Саларьево парк» расположен в Новой Москве, в 6 километрах от МКАД по Киевскому шоссе.
-                        В пяти минутах пешком находится станция метро «Филатов Луг».
-                        ТРЦ «Саларис» и крупные торговые центры — «РИО», Metro Cash & Carry, «Леруа Мерлен» — всего в пяти минутах езды на машине.
-                    </p>
+                    <div class="apartment-description__paragraph">
+                        <div class="apartment-description__paragraph__content">
+                            <p class="title__light">
+                                Жилой район «Саларьево парк» расположен в Новой Москве, в 6 километрах от МКАД по Киевскому шоссе.
+                                В пяти минутах пешком находится станция метро «Филатов Луг».
+                                ТРЦ «Саларис» и крупные торговые центры — «РИО», Metro Cash & Carry, «Леруа Мерлен» — всего в пяти минутах езды на машине.
+                            </p>
+                            <div class="apartment-description__paragraph__content__bottom"></div>
+                        </div>
+
+                        <div class="button paragraph__show-all">
+                            <p class="title__extra-medium title__link title__green">
+                                Показать полностью
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -676,7 +691,7 @@
                 </div>
             </div>
 
-            <div class="apartment-description-container content-border">
+            <div id="apartment-description-container" class="apartment-description-container content-border">
                 <div class="apartment-description__title">
                     <p class="title__large__xs">
                         О комплексе
@@ -684,20 +699,20 @@
                 </div>
 
                 <div class="apartment-description__tab-bar">
-                    <div class="button apartment__tab-bar__item apartment__tab-bar__item__active">
+                    <div class="button apartment__tab-bar__item apartment__tab-bar__item__active apartment-tab__about-apartment__02">
                         <p class="title__extra-medium no-whitespace">
                             Описание
                         </p>
                     </div>
 
-                    <div class="button apartment__tab-bar__item">
+                    <div class="button apartment__tab-bar__item apartment-tab__details apartment-description__details__02">
                         <p class="title__extra-medium no-whitespace">
                             Подробные характеристики
                         </p>
                     </div>
                 </div>
 
-                <div class="apartment-description__paragraphs">
+                <div class="apartment-description__paragraphs apartment-description__details__02__paragraphs">
                     <div class="apartment-description__paragraph">
                         <div class="apartment-description__paragraph__content">
                             <p class="title__light">
@@ -1101,6 +1116,9 @@
 
         <!--  rc-filters: Открыть все фильтры  -->
         <script type="module" src="../scripts/filters.js"></script>
+
+        <!--  tab-bar-navigation: Табы при скролле  -->
+        <script type="module" src="./tab-bar-navigation.js"></script>
 
         <!--  rc-cards: Подключение функционала к таблице с квартирами  -->
         <script type="module" src="apartments.js"></script>

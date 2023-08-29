@@ -150,6 +150,11 @@
     justify-content: space-between;
 }
 
+.rc-apartments-container__filters .button__secondary {
+    height: 48px;
+    padding-left: 20px;
+}
+
 .rc-apartments-container__filters__show-on-map,
 .rc-apartments-container__filters__price {
     width: 190px;
@@ -485,7 +490,7 @@ input[type="range"] {
     height: 2px;
     width: 100%;
     position: absolute;
-    background-color: #C6C6C6;
+    background-color: transparent;
     pointer-events: none;
 }
 

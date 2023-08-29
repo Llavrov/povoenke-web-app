@@ -18,7 +18,7 @@ paragraphsContainer && paragraphsContainer.forEach((paragraph) => {
             showAllParagraph = false;
             bottom.style.display = 'none';
             button.innerHTML = `
-                <p class="title__light title__green">
+                <p class="title__extra-medium title__link title__green">
                     Скрыть
                 </p>`;
         } else {
@@ -26,7 +26,7 @@ paragraphsContainer && paragraphsContainer.forEach((paragraph) => {
             showAllParagraph = true;
             bottom.style.display = 'block';
             button.innerHTML = `
-                <p class="title__light title__green">
+                <p class="title__extra-medium title__link title__green">
                     Показать полностью
                 </p>`;
         }

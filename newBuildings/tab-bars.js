@@ -1,23 +1,22 @@
-const tabBarsDescriptionContainer = document.querySelectorAll('.apartment-description__tab-bar');
-const tabBarsMortgageContainer = document.querySelectorAll('.apartment-mortgage__tab-bar');
-
+const tabBarsDescriptionContainer = document.querySelectorAll('.building-description__tab-bar');
+const tabBarsBanksContainer = document.querySelectorAll('.building-banks__tab-bar');
 
 // При нажатии на таб бар изменяется на активный
 
 [
     tabBarsDescriptionContainer,
-    tabBarsMortgageContainer
+    tabBarsBanksContainer
 ].map((tabBarsContainer) =>
     tabBarsContainer.forEach((tabBarContainer) => {
-        const tabBars = tabBarContainer.querySelectorAll('.apartment__tab-bar__item');
+        const tabBars = tabBarContainer.querySelectorAll('.building__tab-bar__item');
 
         tabBars.forEach((tabBar) => {
             tabBar.addEventListener('click', () => {
                 tabBars.forEach((tabBarItem) => {
-                    tabBarItem.classList.remove('apartment__tab-bar__item__active');
+                    tabBarItem.classList.remove('building__tab-bar__item__active');
                 });
 
-                tabBar.classList.add('apartment__tab-bar__item__active');
+                tabBar.classList.add('building__tab-bar__item__active');
             })
         });
     })
@@ -25,25 +24,8 @@ const tabBarsMortgageContainer = document.querySelectorAll('.apartment-mortgage_
 
 const TAB_DESCRIPTION_LIST = [
     {
-        tabSelector: '.apartment-tab__about-apartment',
-        selector: '.apartment-description__details__paragraphs',
-        paragraphs: [
-            {
-                title: null,
-                content: `
-                    Жилой район «Саларьево парк» расположен в Новой Москве, в 6 километрах от МКАД по Киевскому шоссе.
-                    В пяти минутах пешком находится станция метро «Филатов Луг».
-                    ТРЦ «Саларис» и крупные торговые центры — «РИО», Metro Cash & Carry, «Леруа Мерлен» — всего в пяти минутах езды на машине.
-                    Жилой район «Саларьево парк» расположен в Новой Москве, в 6 километрах от МКАД по Киевскому шоссе.
-                    В пяти минутах пешком находится станция метро «Филатов Луг».
-                    ТРЦ «Саларис» и крупные торговые центры — «РИО», Metro Cash & Carry, «Леруа Мерлен» — всего в пяти минутах езды на машине.
-                `
-            },
-        ]
-    },
-    {
-        tabSelector: '.apartment-tab__about-apartment__02',
-        selector: '.apartment-description__details__02__paragraphs',
+        tabSelector: '.building-tab__about-building',
+        selector: '.building-description__details__paragraphs',
         paragraphs: [
             {
                 title: null,
@@ -84,114 +66,8 @@ const TAB_DESCRIPTION_LIST = [
 
 const TAB_CHARACTERISTIC_LIST = [
     {
-        tabSelector: '.apartment-tab__details',
-        selector: '.apartment-description__details__paragraphs',
-        title: 'Жилой комплекс',
-        paragraphs: [
-            {
-                detailsTitle: null,
-                detailsContent:
-                    [
-                        {
-                            char: 'Характеристика',
-                            value: 'значение'
-                        },
-                        {
-                            char: 'Характеристика',
-                            value: 'значение'
-                        },
-                        {
-                            char: 'Характеристика',
-                            value: 'значение'
-                        },
-                    ]
-            },
-            {
-                detailsTitle: null,
-                detailsContent:
-                    [
-                        {
-                            char: 'Характеристика',
-                            value: 'значение'
-                        },
-                        {
-                            char: 'Характеристика',
-                            value: 'значение'
-                        },
-                        {
-                            char: 'Характеристика',
-                            value: 'значение'
-                        },
-                    ]
-            },
-            {
-                detailsTitle: {
-                    corpus: 'Корпус 1',
-                    address: 'Красногвардейская 32А, Литер Б',
-                },
-                detailsContent:
-                    [
-                        {
-                            char: 'Характеристика',
-                            value: 'значение'
-                        },
-                        {
-                            char: 'Характеристика',
-                            value: 'значение'
-                        },
-                        {
-                            char: 'Характеристика',
-                            value: 'значение'
-                        },
-                    ]
-            },
-            {
-                detailsTitle: {
-                    corpus: 'Корпус 2',
-                    address: 'Красногвардейская 32А, Литер Б',
-                },
-                detailsContent:
-                    [
-                        {
-                            char: 'Характеристика',
-                            value: 'значение'
-                        },
-                        {
-                            char: 'Характеристика',
-                            value: 'значение'
-                        },
-                        {
-                            char: 'Характеристика',
-                            value: 'значение'
-                        },
-                    ]
-            },
-            {
-                detailsTitle: {
-                    corpus: 'Корпус 3',
-                    address: 'Красногвардейская 32А, Литер Б',
-                },
-                detailsContent:
-                    [
-                        {
-                            char: 'Характеристика',
-                            value: 'значение'
-                        },
-                        {
-                            char: 'Характеристика',
-                            value: 'значение'
-                        },
-                        {
-                            char: 'Характеристика',
-                            value: 'значение'
-                        },
-                    ]
-            }
-        ],
-    },
-    {
-        tabSelector: '.apartment-description__details__02',
-        selector: '.apartment-description__details__02__paragraphs',
+        tabSelector: '.building-tab__details',
+        selector: '.building-description__details__paragraphs',
         title: 'Жилой комплекс',
         paragraphs: [
             {
@@ -299,28 +175,28 @@ const TAB_CHARACTERISTIC_LIST = [
 
 TAB_DESCRIPTION_LIST.forEach(({tabSelector, selector, paragraphs}) => {
     const aboutApartmentTab = document.querySelector(tabSelector);
-    const apartmentDetails = document.querySelector(selector);
+    const buildingDetails = document.querySelector(selector);
 
-    const apartmentDetailsContainer = document.createElement('div');
+    const buildingDetailsContainer = document.createElement('div');
 
     paragraphs.forEach(({title, content}) => {
         const paragraphElement = document.createElement('div');
-        paragraphElement.className = 'apartment-description__paragraph';
+        paragraphElement.className = 'building-description__paragraph';
 
         paragraphElement.innerHTML = `
             ${title ? (
-                `<div class="apartment-description__title">
+            `<div class="building-description__title">
                     <p class="title__large__xxs">
                         ${title}
                     </p>
                 </div>`
-            ) : ''}
+        ) : ''}
 
-            <div class="apartment-description__paragraph__content">
+            <div class="building-description__paragraph__content">
                 <p class="title__light">
                     ${content}
                 </p>
-                <div class="apartment-description__paragraph__content__bottom"></div>
+                <div class="building-description__paragraph__content__bottom"></div>
             </div>
     
             <div class="button paragraph__show-all">
@@ -330,17 +206,17 @@ TAB_DESCRIPTION_LIST.forEach(({tabSelector, selector, paragraphs}) => {
             </div>
         `;
 
-        apartmentDetailsContainer.appendChild(paragraphElement);
+        buildingDetailsContainer.appendChild(paragraphElement);
     });
 
     aboutApartmentTab.addEventListener('click', () => {
-        apartmentDetails.innerHTML = apartmentDetailsContainer.innerHTML;
+        buildingDetails.innerHTML = buildingDetailsContainer.innerHTML;
         handleShowAllParagraph();
     });
 })
 
 // aboutApartmentTab.addEventListener('click', () => {
-//     apartmentDetails.innerHTML = `
+//     buildingDetails.innerHTML = `
 //         <p class="title__light">
 //             Жилой район «Саларьево парк» расположен в Новой Москве, в 6 километрах от МКАД по Киевскому шоссе.
 //             В пяти минутах пешком находится станция метро «Филатов Луг».
@@ -483,10 +359,10 @@ TAB_CHARACTERISTIC_LIST.forEach(({tabSelector, selector, title, paragraphs}) => 
 // После переключения табов активируем раскрытие параграфа при нажатии на "Показать полностью"
 function handleShowAllParagraph() {
     const APARTMENT_PARAGRAPH_BUTTON = '.paragraph__show-all';
-    const APARTMENT_PARAGRAPH = '.apartment-description__paragraph__content';
+    const APARTMENT_PARAGRAPH = '.building-description__paragraph__content';
     const HEIGHT_OF_PARAGRAPH = '70px';
 
-    const paragraphsContainer = document.querySelectorAll('.apartment-description__paragraph');
+    const paragraphsContainer = document.querySelectorAll('.building-description__paragraph');
 
     paragraphsContainer && paragraphsContainer.forEach((paragraph) => {
         let showAllParagraph = true;
@@ -494,7 +370,7 @@ function handleShowAllParagraph() {
         const button = paragraph.querySelector(APARTMENT_PARAGRAPH_BUTTON);
         const contentContainer = paragraph.querySelector(APARTMENT_PARAGRAPH);
         const content = contentContainer.querySelector('p');
-        const bottom = contentContainer.querySelector('.apartment-description__paragraph__content__bottom');
+        const bottom = contentContainer.querySelector('.building-description__paragraph__content__bottom');
 
         button && button.addEventListener('click', () => {
             if (showAllParagraph) {

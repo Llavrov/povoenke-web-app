@@ -234,7 +234,38 @@
 }
 
 .rc-card__image__logo__content {
+    margin-top: -5px;
     display: none;
+    flex-direction: column;
+    background: #00000030;
+    height: 42px;
+    padding-right: 24px;
+    border-radius: 0 21px 21px 0;
+
+    justify-content: center;
+}
+
+.rc-card__image__logo__content p {
+    line-height: 16px;
+}
+
+.rc-card__image__logo__content p:last-child {
+    color: #FFFFFF;
+    opacity: 0.5;
+}
+
+.rc-card__image__logo__active {
+    border-radius: 50% 0 0 50%;
+    border: 5px solid transparent;
+    background: #00000030;
+}
+
+.rc-card__image__logo__active img {
+    margin-right: 5px;
+}
+
+.rc-card__image__logo__active {
+    display: flex;
 }
 
 .rc-logo {
@@ -350,24 +381,6 @@
     }
 
     .rc-card__image__logo__content {
-        margin-top: -5px;
         display: flex;
-        flex-direction: column;
-        background: #00000030;
-        height: 42px;
-        padding-right: 24px;
-        border-radius: 0 21px 21px 0;
-
-        justify-content: center;
-    }
-
-    .rc-card__image__logo__content p {
-        line-height: 16px;
-    }
-
-    .rc-card__image__logo__content p:last-child {
-        color: #FFFFFF;
-
-        opacity: 0.5;
     }
 }

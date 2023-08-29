@@ -36,6 +36,11 @@ const FILTER_OPTIONS = [
         options: ['опция 1', 'опция 2', 'опция 3'],
     },
     {
+        selector: '.rc-filters__price-filter',
+        menuTitle: 'Все корпуса',
+        options: ['опция 1', 'опция 2', 'опция 3'],
+    },
+    {
         selector: '.rc-filters__content__filters__tab .rc-filters__place',
         menuTitle: 'Все корпуса',
         options: ['опция 1', 'опция 2', 'опция 3'],
@@ -67,7 +72,7 @@ function handleCloseAllMenus(event) {
             const menu = filterTabElement.querySelector('.rc-filters__menu');
             menu && filterTabElement.removeChild(menu);
             filterTabElement.style.border = '1px solid transparent';
-            icon[1].style.transform = 'rotate(0deg)';
+            if (icon[1]) icon[1].style.transform = 'rotate(0deg)';
         }
     });
 }
@@ -137,10 +142,10 @@ function handleOpenMenuFilter(event, selector, menu, title) {
         }
     } else {
         handleCloseAllMenus(event);
-        filterTabElement.appendChild(menu);
+        setTimeout(() => filterTabElement.appendChild(menu), 0)
 
         filterTabElement.style.border = '1px solid rgba(0, 155, 71, 1)';
-        icon[1].style.transform = 'rotate(180deg)';
+        if (icon[1]) icon[1].style.transform = 'rotate(180deg)';
     }
 }
 

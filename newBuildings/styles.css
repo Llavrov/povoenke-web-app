@@ -319,12 +319,21 @@
     padding-top: 80px;
 }
 
+.building-info__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
 .building-info__title__container {
     max-width: 743px;
 }
 
 .building-info__title__tag {
-    padding: 6px 10px 4px;
+    height: 26px;
+    box-sizing: border-box;
+    padding: 4px 10px 4px;
     background: rgba(55, 110, 164, 0.06);
     border-radius: 20px;
 }
@@ -455,10 +464,20 @@
 
 .building-object-type-container {
     display: flex;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    height: 70px;
+}
+
+.building-object-type-content {
+    height: 70px;
+    padding: 12px 0;
+    box-sizing: border-box;
+    display: flex;
     justify-content: start;
     gap: 4px;
     width: 100%;
-    margin-top: 60px;
 }
 
 .building-object-type__item {
@@ -482,7 +501,12 @@
 @media (max-width: 1131px) {
     .building-object-type-container {
         overflow-x: auto;
-        margin-top: 28px;
+        box-sizing: border-box;
+    }
+
+    .building-object-type-content {
+        overflow-x: auto;
+        padding: 12px 20px;
     }
 }
 
@@ -491,7 +515,7 @@
 
 
 .building-apartments-container {
-    margin-top: 64px;
+    margin-top: 52px;
     margin-bottom: 96px;
     width: 100%;
 }
@@ -678,7 +702,7 @@
     justify-content: start;
 }
 
-.building-mortgage__tab-bar {
+.building__tab-bar {
     display: flex;
     gap: 40px;
     padding: 20px 20px 2px;
@@ -686,11 +710,11 @@
     margin: 0 -20px;
 }
 
-.building-mortgage__tab-bar__item p {
+.building__tab-bar__item p {
     color: rgba(17, 34, 51, 0.35);
 }
 
-.building-mortgage__tab-bar__item__active {
+.building__tab-bar__item__active {
     color: rgba(0, 155, 71, 1);
     text-decoration-line: underline;
     text-decoration-color: rgba(0, 155, 71, 1);
@@ -698,7 +722,7 @@
     text-underline-offset: 0.5em;
 }
 
-.building-mortgage__tab-bar__item__active p {
+.building__tab-bar__item__active p {
     color: rgba(0, 155, 71, 1);
 }
 
@@ -916,22 +940,6 @@ td:not(:first-child, :last-child) {
     display: flex;
     gap: 40px;
     padding: 20px 0;
-}
-
-.building-description__tab-bar__item p {
-    color: #173B5E59;
-}
-
-.building-description__tab-bar__item__active {
-    color: rgba(0, 155, 71, 1);
-    text-decoration-line: underline;
-    text-decoration-color: rgba(0, 155, 71, 1);
-    text-decoration-style: solid;
-    text-underline-offset: 0.5em;
-}
-
-.building-description__tab-bar__item__active p {
-    color: rgba(0, 155, 71, 1);
 }
 
 @media (max-width: 780px) {

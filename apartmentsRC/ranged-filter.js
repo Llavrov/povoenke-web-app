@@ -1,6 +1,6 @@
 function controlFromInput(fromSlider, fromInput, toInput, controlSlider) {
     const [from, to] = getParsed(fromInput, toInput);
-    fillSlider(fromInput, toInput, '#C6C6C6', 'rgba(0, 155, 71, 1)', controlSlider);
+    fillSlider(fromInput, toInput, 'transparent', 'rgba(0, 155, 71, 1)', controlSlider);
     if (from > to) {
         fromSlider.value = to;
         fromInput.value = to;
@@ -11,7 +11,7 @@ function controlFromInput(fromSlider, fromInput, toInput, controlSlider) {
 
 function controlToInput(toSlider, fromInput, toInput, controlSlider) {
     const [from, to] = getParsed(fromInput, toInput);
-    fillSlider(fromInput, toInput, '#C6C6C6', 'rgba(0, 155, 71, 1)', controlSlider);
+    fillSlider(fromInput, toInput, 'transparent', 'rgba(0, 155, 71, 1)', controlSlider);
     setToggleAccessible(toInput);
     if (from <= to) {
         toSlider.value = to;
@@ -23,7 +23,7 @@ function controlToInput(toSlider, fromInput, toInput, controlSlider) {
 
 function controlFromSlider(fromSlider, toSlider, fromInput) {
     const [from, to] = getParsed(fromSlider, toSlider);
-    fillSlider(fromSlider, toSlider, '#C6C6C6', 'rgba(0, 155, 71, 1)', toSlider);
+    fillSlider(fromSlider, toSlider, 'transparent', 'rgba(0, 155, 71, 1)', toSlider);
     if (from > to) {
         fromSlider.innerHTML = to;
         fromInput.innerHTML = to;
@@ -34,7 +34,7 @@ function controlFromSlider(fromSlider, toSlider, fromInput) {
 
 function controlToSlider(fromSlider, toSlider, toInput) {
     const [from, to] = getParsed(fromSlider, toSlider);
-    fillSlider(fromSlider, toSlider, '#C6C6C6', 'rgba(0, 155, 71, 1)', toSlider);
+    fillSlider(fromSlider, toSlider, 'transparent', 'rgba(0, 155, 71, 1)', toSlider);
     setToggleAccessible(toSlider);
     if (from <= to) {
         toSlider.innerHTML = to;
@@ -79,7 +79,7 @@ const fromSlider = document.querySelector('#fromSlider');
 const toSlider = document.querySelector('#toSlider');
 const fromInput = document.querySelector('#fromInput');
 const toInput = document.querySelector('#toInput');
-fillSlider(fromSlider, toSlider, '#C6C6C6', 'rgba(0, 155, 71, 1)', toSlider);
+fillSlider(fromSlider, toSlider, 'transparent', 'rgba(0, 155, 71, 1)', toSlider);
 setToggleAccessible(toSlider);
 
 fromSlider.oninput = () => controlFromSlider(fromSlider, toSlider, fromInput);
