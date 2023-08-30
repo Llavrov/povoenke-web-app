@@ -72,6 +72,15 @@ function handleOpenModalScreen() {
     }
 }
 
+function getNumberOfSlide(slide) {
+    const number = slide
+        .getAttribute('aria-label')
+        .match(/.*\//)
+        .map((slideNumber) => slideNumber.replace(' /', ''))[0];
+
+    return Number(number);
+}
+
 modalCloseButton.addEventListener('click', () => {
     handleOpenModalScreen();
 })
@@ -95,11 +104,20 @@ if (miniWrapperSlides && miniWrapperSlides.length > MAX_LAST_INDEX_OF_SLIDES) {
         handleOpenModalScreen();
     });
 
-    if (WINDOW_WIDTH < TOUCH_SCREEN) {
-        document.querySelector('.building-slider-container').addEventListener('click', (event) => {
+    document
+        .querySelector('.building-slider-container')
+        .addEventListener('click', (event) => {
             handleOpenModalScreen();
         });
-    }
+
+    document
+        .querySelector('.building-slider-container')
+        .querySelectorAll('.swiper-slide')
+        .forEach((slide) => {
+            slide.addEventListener('click', () => {
+                document.querySelectorAll('.building-slider')[1].swiper.slideTo(getNumberOfSlide(slide) - 1);
+            });
+        })
 }
 
 miniWrapperSlides && miniWrapperSlides.forEach((slide, index) => {
