@@ -313,6 +313,7 @@
 .apartment-object-type-container {
     display: flex;
     justify-content: center;
+    background: white;
     gap: 4px;
     width: 100%;
     height: 70px;

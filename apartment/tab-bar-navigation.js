@@ -1,5 +1,5 @@
 const tabBarNavigationContainer = document.querySelector('.object-type-container');
-const tabBarNavigation = document.querySelector('.apartment-object-type-content');
+const tabBarNavigation = document.querySelector('.apartment-object-type-container');
 
 
 const about = document.querySelector('#apartment-about-container');
