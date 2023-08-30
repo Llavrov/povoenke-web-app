@@ -59,7 +59,8 @@ swiper && swiper.on('activeIndexChange', function () {
 });
 
 miniWrapperSlides && miniWrapperSlides.forEach((slide, index) => {
-    slide.addEventListener('click', () => {
+    slide.addEventListener('click', (event) => {
+        event.stopPropagation();
         swiper.slideTo(index);
     });
 })
@@ -77,8 +78,10 @@ function handleOpenModalScreen() {
     isModalOpen = !isModalOpen;
 
     if (isModalOpen) {
+        console.log('close')
         modalContainer.style.display = 'none';
     } else {
+        console.log('open')
         modalContainer.style.display = 'block';
     }
 }
@@ -112,6 +115,7 @@ if (miniWrapperSlides && miniWrapperSlides.length > MAX_LAST_INDEX_OF_SLIDES) {
 
     slideWithCounter.appendChild(counter);
     slideWithCounter.addEventListener('click', () => {
+        console.log('click');
         handleOpenModalScreen();
     });
 
