@@ -85,7 +85,7 @@ if (miniWrapperSlides && miniWrapperSlides.length > MAX_LAST_INDEX_OF_SLIDES) {
 
     counter.className = 'building-slider__count-of-images-count';
     counter.innerHTML = `
-        <p class="title__light title__gray">
+        <p class="title__light__extraBold title__gray">
             + ${miniWrapperSlides.length - MAX_COUNT_OF_SLIDES}
         </p>
     `;

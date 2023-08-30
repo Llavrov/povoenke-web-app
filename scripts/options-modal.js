@@ -147,10 +147,10 @@ function handleSetMenusForAllFiltersTabs() {
             optionElement.className = 'options-modal__option title__link';
             optionElement.innerHTML = `
                 <div class="">
-                    <p class="title__light">
+                    <p class="title__light title__black">
                         ${corpus}
                     </p>
-                    <p class="title__light">
+                    <p class="title__small title__gray">
                         ${home}
                     </p>
                 </div>

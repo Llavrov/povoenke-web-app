@@ -165,11 +165,15 @@ function createNewCard(cardId) {
     
             <div class="rc-card__content__buttons">
                 <div class="button__green button__center">
-                    Позвонить
+                    <p class="title__light__bold title__white">
+                        Позвонить
+                    </p>
                 </div>
     
                 <div class="button__secondary button__center no-whitespace">
-                    Заказать звонок
+                    <p class="title__light__bold">
+                        Заказать звонок
+                    </p>
                 </div>
             </div>
         </div>

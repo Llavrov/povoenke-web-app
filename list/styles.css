@@ -12,15 +12,26 @@
     max-width: 1131px;
 }
 
+.content-border__light {
+    width: 100%;
+    max-width: 1131px;
+}
+
 @media (max-width: 1131px) {
     .content-border {
         padding: 0 20px;
         box-sizing: border-box;
     }
 
+    .content-border__light {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+
     .list-container .rc-filters {
         padding-bottom: 20px;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
 }
 
@@ -343,6 +354,17 @@
     flex-direction: row;
     margin-top: 20px;
     gap: 10px;
+}
+
+.rc-card__content__buttons .button__center {
+    height: 46px;
+    justify-content: center;
+    align-items: center;
+}
+
+.rc-card__content__buttons .button__center p {
+    padding-top: 4px;
+    line-height: 12px;
 }
 
 .swiper__hover-section__container {
