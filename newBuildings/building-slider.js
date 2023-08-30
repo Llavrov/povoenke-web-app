@@ -17,6 +17,17 @@ new Swiper(`.building-slider`, {
     }
 });
 
+const prevBtn = document.querySelector('.building-slider__button-prev');
+const nextBtn = document.querySelector('.building-slider__button-next');
+
+prevBtn.addEventListener('click', (event) => {
+    event.stopPropagation();
+})
+
+nextBtn.addEventListener('click', (event) => {
+    event.stopPropagation();
+})
+
 const WINDOW_WIDTH = document.body.clientWidth;
 const TOUCH_SCREEN = 660;
 const MAX_COUNT_OF_SLIDES = 7;
