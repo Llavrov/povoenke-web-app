@@ -969,7 +969,7 @@ footer {
 }
 
 .options-modal__container {
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 200px;
     overscroll-behavior: contain;
     scrollbar-width: thin;

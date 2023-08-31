@@ -96,7 +96,7 @@ function createNewCard(cardId) {
                 </div>
     
                 <div class="rc-apartment__content__list__row title__light">
-                    <p class="title__light title__gray">
+                    <p class="title__small title__gray">
                         Отделка
                     </p>
     
